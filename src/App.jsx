@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MainPage from './pages/MainPage/MainPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
+import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/restaurant" element={<RestaurantPage />} />
         </Routes>
         <Footer />
       </GlobalStyleProvider>
