@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as S from './style';
 
 const Header = () => {
-  const isLogin = useState(false);
+  const [isLogin, setLogin] = useState(false);
   return (
     <S.Header>
       <a href="/">
