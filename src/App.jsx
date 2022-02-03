@@ -1,16 +1,21 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import GlobalStyleProvider from './styles/GlobalStyleProvider';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import LoginModal from './components/LoginModal/LoginModal';
+import MainPage from './pages/MainPage/MainPage';
 
 const App = () => {
   return (
-    <GlobalStyleProvider>
-      <Header />
-      <Footer />
-      <LoginModal />
-    </GlobalStyleProvider>
+    <>
+      <GlobalStyleProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+        </Routes>
+        <Footer />
+      </GlobalStyleProvider>
+    </>
   );
 };
 
