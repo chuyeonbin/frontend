@@ -13,6 +13,7 @@ const fontWeight = {
 };
 
 const color = {
+  white: '#ffffff',
   black: '#000000',
   purple: '#8A53FF',
   gray: '#c5c5c5',
