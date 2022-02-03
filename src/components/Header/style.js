@@ -7,7 +7,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #c5c5c5;
+  border-bottom: 1px solid ${({ theme }) => theme.color.gray};
 `;
 
 export const MenuBar = styled.div`
@@ -17,7 +17,6 @@ export const MenuBar = styled.div`
 
 export const Menu = styled.ul`
   display: flex;
-  list-style: none;
 `;
 
 export const MenuList = styled.li`
@@ -26,17 +25,14 @@ export const MenuList = styled.li`
 
 export const MenuButton = styled.button`
   padding: 0.5rem;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border: 1px solid #c5c5c5;
-  background: none;
-  border: none;
+  font-size: ${({ theme }) => theme.fontSize.regular};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
 export const Logo = styled.img.attrs({ src: `${logo}`, alt: '로고' })`
   width: 100px;
   height: 30px;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
 export const LoginButton = styled.button`
@@ -57,6 +53,5 @@ export const UserImage = styled.img.attrs({
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
-  border: 1px solid #c5c5c5;
-  background: none;
+  border: 1px solid ${({ theme }) => theme.color.gray};
 `;
