@@ -1,20 +1,27 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 
 const Header = () => {
   const [isLogin, setLogin] = useState(false);
+  const navigate = useNavigate();
+
+  const goToPage = url => navigate(url);
+
   return (
     <S.Header>
-      <a href="/">
-        <S.Logo />
-      </a>
+      <S.Logo onClick={() => goToPage('/')} />
       <S.MenuBar>
         <S.Menu>
           <S.MenuList>
-            <S.MenuButton>게시글 등록</S.MenuButton>
+            <S.MenuButton onClick={() => goToPage('/post/upload')}>
+              게시글 등록
+            </S.MenuButton>
           </S.MenuList>
           <S.MenuList>
-            <S.MenuButton>BEST 맛집</S.MenuButton>
+            <S.MenuButton onClick={() => goToPage('/restaurant')}>
+              BEST 맛집
+            </S.MenuButton>
           </S.MenuList>
         </S.Menu>
         {isLogin === true ? (

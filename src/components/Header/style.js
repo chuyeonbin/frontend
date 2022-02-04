@@ -33,6 +33,7 @@ export const Logo = styled.img.attrs({ src: `${logo}`, alt: '로고' })`
   width: 100px;
   height: 30px;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
+  cursor: pointer;
 `;
 
 export const LoginButton = styled.button`
