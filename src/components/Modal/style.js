@@ -12,6 +12,7 @@ export const Wrap = styled.div`
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 `;
 
 export const Modal = styled.div`
