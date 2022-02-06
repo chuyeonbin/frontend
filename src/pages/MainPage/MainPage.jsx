@@ -1,10 +1,11 @@
 import React from 'react';
+import JumboTron from './JumboTron/JumboTron';
 import * as S from './style';
 
 const MainPage = () => {
   return (
     <S.MainPage>
-      <h1>메인페이지.</h1>
+      <JumboTron />
     </S.MainPage>
   );
 };
