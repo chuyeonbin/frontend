@@ -4,9 +4,10 @@ import * as S from './style';
 
 const MainPage = () => {
   return (
-    <S.MainPage>
+    <>
       <JumboTron />
-    </S.MainPage>
+      <S.MainPage title="같이먹자"></S.MainPage>
+    </>
   );
 };
 

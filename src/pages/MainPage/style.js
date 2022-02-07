@@ -1,4 +1,5 @@
 // style.js
 import styled from 'styled-components';
+import CommonPage from '../../components/CommonPage/CommonPage';
 
-export const MainPage = styled.section``;
+export const MainPage = styled(CommonPage)``;
