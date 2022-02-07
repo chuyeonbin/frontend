@@ -6,7 +6,7 @@ const JumboTron = () => {
     <S.JumboTron>
       <S.Content>
         <S.H1>맛집이 궁금하신가요?</S.H1>
-        <button>맛집 보러 가기</button>
+        <S.JumboTronButton name={'맛집 보러 가기'} />
       </S.Content>
     </S.JumboTron>
   );
