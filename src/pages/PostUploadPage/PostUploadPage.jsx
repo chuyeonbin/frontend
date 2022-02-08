@@ -12,7 +12,7 @@ const PostUploadPage = () => {
         <S.TextArea />
         <S.InputWrap>
           <Button type="submit" name={'게시글 등록'} />
-          <Button name={'취소'} />
+          <Button color="red" name={'취소'} />
         </S.InputWrap>
       </S.Form>
     </S.PostUploadPage>
