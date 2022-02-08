@@ -1,11 +1,16 @@
 import React from 'react';
+import JumboTron from './JumboTron/JumboTron';
+import CardList from '../../components/CardList/CardList';
 import * as S from './style';
 
 const MainPage = () => {
   return (
-    <S.MainPage>
-      <h1>메인페이지.</h1>
-    </S.MainPage>
+    <>
+      <JumboTron />
+      <S.MainPage title="같이먹자">
+        <CardList />
+      </S.MainPage>
+    </>
   );
 };
 
