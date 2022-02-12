@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth } from '../../api/index';
 // import * as S from './style';
 
 const OauthCallbackPage = () => {
@@ -8,20 +8,20 @@ const OauthCallbackPage = () => {
   useEffect(() => {
     const url = window.location.href;
     const code = new URL(url).searchParams.get('code');
-    const backUrl = `backend api url/${code}`;
 
     if (!code) return;
 
-    axios
-      .get(backUrl, 'GET') //
-      .then(response => {
-        const token = response.data.token;
+    auth
+      .getToken(code) //
+      .then(res => {
+        const token = res.data.token;
+        console.log(token);
         navigate(-2);
       })
-      .catch(error => {
-        throw new Error(error);
+      .catch(err => {
+        throw new Error(err);
       });
-  }, []);
+  }, [navigate]);
 
   return (
     <div>
