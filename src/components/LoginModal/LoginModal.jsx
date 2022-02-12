@@ -9,7 +9,7 @@ const LoginModal = ({ closeModal }) => {
       <S.LoginWrap>
         <LoginButton
           provider="Kakao"
-          link={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=9719a3774e9f6f5c36f7e5da3a2b4005&redirect_uri=http://localhost:3000/oauth`}
+          link={`https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=9719a3774e9f6f5c36f7e5da3a2b4005&redirect_uri=http://localhost:3000/oauth/kakao`}
         >
           <S.KakaotalkIcon />
           Kakao 로그인
