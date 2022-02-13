@@ -1,11 +1,12 @@
 import React from 'react';
 import * as S from './style';
 import CommentItem from '../CommentItem/CommentItem';
+import CommentUpload from '../CommentUpload/CommentUpload';
 
 const CommentList = ({ commentList }) => {
   return (
     <>
-      <S.CommentCount>댓글: 6</S.CommentCount>
+      <CommentUpload />
       <S.CommentList>
         <CommentItem />
         <CommentItem />
