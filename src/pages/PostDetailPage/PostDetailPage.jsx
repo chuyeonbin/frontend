@@ -7,6 +7,7 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../components/Button/Button';
+import CommentList from './CommentList/CommentList';
 
 const PostDetailPage = () => {
   const id = useParams();
@@ -48,6 +49,7 @@ const PostDetailPage = () => {
             </S.IconList>
           </S.IconWrap>
         </S.PostFooter>
+        <CommentList />
       </S.PostWrap>
     </S.PostDetailPage>
   );
