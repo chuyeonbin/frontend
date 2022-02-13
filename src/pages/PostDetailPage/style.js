@@ -7,14 +7,11 @@ export const PostDetailPage = styled(CommonPage)``;
 
 export const PostWrap = styled.div`
   margin: 0 auto;
+  margin-bottom: 6rem;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  /* @media screen (min-width: 600px) {
-    
-  } */
 `;
 
 export const PostHeader = styled.header`
