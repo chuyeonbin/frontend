@@ -9,7 +9,7 @@ const BASE_API_URL = 'backend api url/';
 
 const auth = {
   async getToken(code) {
-    return axios.get(`${BASE_API_URL}?code=${code}`, GET);
+    return axios.get(`${BASE_API_URL}kakao/?code=${code}`, GET);
   },
 };
 
