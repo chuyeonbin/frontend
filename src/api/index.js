@@ -5,12 +5,12 @@ const POST = 'POST';
 const PUT = 'PUT';
 const DELETE = 'DELETE';
 
-const BASE_API_URL = 'backend api url/';
+const BASE_API_URL = 'https://sicksago.herokuapp.com';
 
-const auth = {
+const authAPI = {
   async getToken(code) {
-    return axios.get(`${BASE_API_URL}kakao/?code=${code}`, GET);
+    return axios.get(`${BASE_API_URL}/login/oauth/kakao/?code=${code}`, GET);
   },
 };
 
-export { auth };
+export { authAPI };
