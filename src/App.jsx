@@ -8,6 +8,7 @@ import PostUploadPage from './pages/PostUploadPage/PostUploadPage';
 import PostDetailPage from './pages/PostDetailPage/PostDetailPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
+import OauthCallbackPage from './pages/OauthCallbackPage/OauthCallbackPage';
 
 const App = () => {
   return (
@@ -16,10 +17,11 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/post/upload" element={<PostUploadPage />} />
           <Route path="/post/:id" element={<PostDetailPage />} />
           <Route path="/restaurant" element={<RestaurantPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/oauth/*" element={<OauthCallbackPage />} />
         </Routes>
         <Footer />
       </GlobalStyleProvider>
