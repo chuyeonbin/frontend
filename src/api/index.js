@@ -5,7 +5,7 @@ const POST = 'POST';
 const PUT = 'PUT';
 const DELETE = 'DELETE';
 
-const BASE_API_URL = 'https://sicksago.herokuapp.com';
+const BASE_API_URL = 'https://api-sicksago.herokuapp.com';
 
 const authAPI = {
   async getToken(code) {
