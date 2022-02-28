@@ -15,8 +15,9 @@ const OauthCallbackPage = () => {
       .getToken(code) //
       .then(res => {
         const token = res.data.token;
+        console.log(res);
         localStorage.setItem('accessToken', token);
-        navigate(-2);
+        navigate('/');
       })
       .catch(err => {
         throw new Error(err);
