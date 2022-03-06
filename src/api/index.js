@@ -8,4 +8,4 @@ const httpInstance = axios.create({
   withCredentials: true,
 });
 
-export { httpInstance };
+export default httpInstance;

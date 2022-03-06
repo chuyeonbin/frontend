@@ -1,4 +1,4 @@
-import { httpInstance } from './index';
+import httpInstance from './index';
 
 class Auth {
   constructor(httpInstance) {
