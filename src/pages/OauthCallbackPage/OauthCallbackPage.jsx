@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { authAPI } from '../../api/index';
+import auth from '../../api/auth';
 // import * as S from './style';
 
 const OauthCallbackPage = () => {
@@ -11,12 +11,9 @@ const OauthCallbackPage = () => {
 
     if (!code) return;
 
-    authAPI
-      .getToken(code) //
+    auth
+      .login(code) //
       .then(res => {
-        const token = res.data.token;
-        console.log(res);
-        localStorage.setItem('accessToken', token);
         navigate('/');
       })
       .catch(err => {
