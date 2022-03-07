@@ -1,7 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setCount } from '../../../store/modal';
 import * as S from './style';
 
 const NameModal = () => {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(setCount());
+  };
   return (
     <S.NameWrap>
       <S.Title>반갑습니다!🎉</S.Title>
@@ -11,7 +17,7 @@ const NameModal = () => {
         <S.NameInput />
         <S.Span>님🎉</S.Span>
       </S.InputWrap>
-      <S.NextButton name={'다음'} />
+      <S.NextButton name={'다음'} onClick={handleClick} />
     </S.NameWrap>
   );
 };
