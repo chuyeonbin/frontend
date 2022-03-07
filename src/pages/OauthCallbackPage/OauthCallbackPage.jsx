@@ -19,14 +19,13 @@ const OauthCallbackPage = () => {
       const profileSaveUser = res.payload.profileSaveUser;
 
       if (profileSaveUser) {
-        //회원가입이 있으면
-        navigate('/');
+        //회원가입이 되있으면
       } else {
         console.log(res.payload);
-        navigate('/');
         dispatch(setShowModal(true));
         dispatch(setCount());
       }
+      navigate('/');
     });
   }, [navigate]);
 

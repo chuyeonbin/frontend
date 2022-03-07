@@ -17,6 +17,7 @@ const initialState = {
   user: {
     id: null,
     name: null,
+    email: null,
     imageUrl: null,
     profileSaveUser: false,
     gender: null,
@@ -29,12 +30,29 @@ const initialState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    setName(state, action) {
+      state.user.name = action.payload;
+    },
+    setGender(state, action) {
+      state.user.gender = action.payload;
+    },
+    setAddress(state, action) {
+      state.user.address = action.payload;
+    },
+    setEmail(state, action) {
+      state.user.email = action.payload;
+    },
+    setPhone(state, action) {
+      state.user.phone = action.payload;
+    },
+  },
   extraReducers: {
     [fetchUser.fulfilled]: (state, { payload }) => {
       const user = state.user;
       user.id = payload.id;
       user.name = payload.name;
+      user.email = payload.email;
       user.imageUrl = payload.imageUrl;
       user.profileSaveUser = payload.profileSaveUser;
       user.gender = payload.gender;
@@ -49,6 +67,9 @@ const userSlice = createSlice({
 });
 
 const user = userSlice.reducer;
+
+export const { setName, setGender, setAddress, setEmail, setPhone } =
+  userSlice.actions;
 
 export { fetchUser };
 

@@ -1,0 +1,14 @@
+{
+  "data": {
+    "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjQ2Mjk1MjUzLCJleHAiOjE2NDYyOTcwNTN9.kysqBhyEpEwRdCD8A1wT19S0Ljr03vzmgLEzzj36pjU",
+    "email": "cndusqls98@naver.com",
+    "id": 8,
+    "imageUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+    "name": "추연빈",
+    "gender": "male",
+    "profileSaveUser": false,
+    "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLvv71cIlxy77-977-9ae-_vSIsImlhdCI6MTY0NjI5NTI1MywiZXhwIjoxNjQ3NTA0ODUzfQ.sJ66mRTxKjB1UKkWgz7-qzQ9Lp1EbRSQWi_z3I9E3fg",
+    "role": "USER",
+    "tokenType": "Bearer"
+  }
+}
