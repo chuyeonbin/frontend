@@ -18,6 +18,7 @@ const initialState = {
     id: null,
     name: null,
     imageUrl: null,
+    profileSaveUser: false,
     gender: null,
     address: null,
     phone: null,
@@ -35,6 +36,7 @@ const userSlice = createSlice({
       user.id = payload.id;
       user.name = payload.name;
       user.imageUrl = payload.imageUrl;
+      user.profileSaveUser = payload.profileSaveUser;
       user.gender = payload.gender;
       user.address = payload.address;
       user.phone = payload.phone;

@@ -16,7 +16,7 @@ const OauthCallbackPage = () => {
 
     dispatch(fetchUser(code)).then(res => {
       const profileSaveUser = res.payload.profileSaveUser;
-      console.log('asdasd');
+
       if (profileSaveUser) {
         //회원이 있으면
         navigate('/');
