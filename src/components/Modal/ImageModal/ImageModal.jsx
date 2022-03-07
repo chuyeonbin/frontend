@@ -1,7 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { setCount } from '../../../store/modal';
 import * as S from './style';
 
 const ImageModal = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(setCount());
+  };
   return (
     <S.ImageWrap>
       <S.Title>이미지를 선택해주세요!</S.Title>
@@ -13,7 +20,7 @@ const ImageModal = () => {
           <S.ImgButton name="이미지 선택" />
         </S.ButtonWrap>
       </S.ImageUpload>
-      <S.NextButton name={'다음'}></S.NextButton>
+      <S.NextButton name={'다음'} onClick={handleClick}></S.NextButton>
     </S.ImageWrap>
   );
 };

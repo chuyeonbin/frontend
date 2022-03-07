@@ -20,7 +20,7 @@ export const SubTitle = styled.h4`
 `;
 
 export const ImageUpload = styled.div`
-  margin-top: 2.5rem;
+  margin: 2rem 0;
   display: flex;
   align-items: center;
 `;
