@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchUser } from '../../store/user';
+import { setCount, setShowModal } from '../../store/modal';
 // import * as S from './style';
 
 const OauthCallbackPage = () => {
@@ -18,11 +19,13 @@ const OauthCallbackPage = () => {
       const profileSaveUser = res.payload.profileSaveUser;
 
       if (profileSaveUser) {
-        //회원이 있으면
+        //회원가입이 있으면
         navigate('/');
       } else {
         console.log(res.payload);
         navigate('/');
+        dispatch(setShowModal(true));
+        dispatch(setCount());
       }
     });
   }, [navigate]);
