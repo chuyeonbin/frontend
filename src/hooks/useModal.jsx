@@ -9,8 +9,6 @@ const useModal = () => {
     dispatch(setShowModal(!showModal));
   };
 
-  console.log(showModal);
-
   return [showModal, toggleModal];
 };
 
