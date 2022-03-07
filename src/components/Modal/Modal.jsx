@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import LoginModal from './LoginModal/LoginModal';
 import NameModal from './NameModal/NameModal';
+import ImageModal from './ImageModal/ImageModal';
+import InfoModal from './InfoModal/InfoModal';
 
 import * as S from './style';
 
@@ -26,14 +28,17 @@ const Modal = ({ closeModal }) => {
           {(() => {
             const LOGIN = 0;
             const NAME = 1;
-            const INFO = 2;
+            const IMAGE = 2;
+            const INFO = 3;
             switch (count) {
               case LOGIN:
                 return <LoginModal />;
               case NAME:
                 return <NameModal />;
-              // case INFO:
-              //   return <InfoModal />;
+              case IMAGE:
+                return <ImageModal />;
+              case INFO:
+                return <InfoModal />;
               default:
                 <div></div>;
             }
