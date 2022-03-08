@@ -1,9 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setGender, setAddress, setEmail, setPhone } from '../../../store/user';
+import {
+  setGender,
+  setAddress,
+  setEmail,
+  setPhone,
+  insertUser,
+} from '../../../store/user';
 import * as S from './style';
 
-function InfoModal() {
+function InfoModal({ closeModal }) {
   const user = useSelector(state => state.user.user);
   const dispatch = useDispatch();
 
@@ -21,6 +27,11 @@ function InfoModal() {
 
   const handlePhoneChange = e => {
     dispatch(setPhone(e.target.value));
+  };
+
+  const signUp = () => {
+    dispatch(insertUser(user));
+    closeModal();
   };
 
   return (
@@ -59,7 +70,7 @@ function InfoModal() {
         <S.InputName>핸드폰</S.InputName>
         <S.Phone onChange={handlePhoneChange} />
       </S.InputWrap>
-      <S.SignButton name="가입완료" />
+      <S.SignButton name="가입완료" onClick={signUp} />
     </S.InfoWrap>
   );
 }

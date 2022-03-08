@@ -38,7 +38,7 @@ const Modal = ({ closeModal }) => {
               case IMAGE:
                 return <ImageModal />;
               case INFO:
-                return <InfoModal />;
+                return <InfoModal closeModal={closeModal} />;
               default:
                 <div></div>;
             }

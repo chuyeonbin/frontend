@@ -76,4 +76,7 @@ export const Phone = styled(Input).attrs({ type: 'tel' })``;
 export const SignButton = styled(Button)`
   align-self: center;
   border-radius: 8px;
+  &:hover {
+    transform: scale(1.05);
+  }
 `;

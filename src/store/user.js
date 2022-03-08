@@ -4,14 +4,22 @@ import auth from '../api/auth';
 
 const fetchUser = createAsyncThunk('user/login', async (code, thunkAPI) => {
   const response = await auth.login(code);
-  const accessToken = response.data.data.accessToken;
+  const accessToken = response.data.accessToken;
 
   httpInstance.defaults.headers.common[
     'Authorization'
   ] = `Bearer ${accessToken}`;
 
-  return response.data.data;
+  return response.data;
 });
+
+const insertUser = createAsyncThunk(
+  'user/signUp',
+  async (userData, thunkAPI) => {
+    const response = await auth.insertUser(userData);
+    return response.data;
+  }
+);
 
 const initialState = {
   user: {
@@ -63,6 +71,12 @@ const userSlice = createSlice({
     [fetchUser.rejected]: state => {
       state.loading = false;
     },
+    [insertUser.fulfilled]: (state, { payload }) => {
+      const user = state.user;
+      console.log(payload.imageUrl);
+      user.imageUrl = payload.imageUrl;
+      user.profileSaveUser = true;
+    },
   },
 });
 
@@ -71,6 +85,6 @@ const user = userSlice.reducer;
 export const { setName, setGender, setAddress, setEmail, setPhone } =
   userSlice.actions;
 
-export { fetchUser };
+export { fetchUser, insertUser };
 
 export default user;
