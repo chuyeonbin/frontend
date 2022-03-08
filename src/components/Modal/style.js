@@ -51,5 +51,5 @@ export const Logo = styled.img.attrs({
   src: `${favicon}`,
   alt: '로고',
 })`
-  width: 120px;
+  width: 90px;
 `;

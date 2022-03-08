@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 import useModal from '../../hooks/useModal';
-import LoginModal from '../LoginModal/LoginModal';
+import Modal from '../Modal/Modal';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Header = () => {
         ) : (
           <S.LoginButton onClick={toggleModal}>로그인</S.LoginButton>
         )}
-        {showModal && <LoginModal closeModal={toggleModal} />}
+        {showModal && <Modal closeModal={toggleModal} />}
       </S.MenuBar>
     </S.Header>
   );

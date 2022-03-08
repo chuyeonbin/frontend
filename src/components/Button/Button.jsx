@@ -3,7 +3,7 @@ import * as S from './style';
 
 const Button = ({ className, onClick, name, color }) => {
   return (
-    <S.Button color={color} className={className}>
+    <S.Button onClick={onClick} color={color} className={className}>
       {name}
     </S.Button>
   );

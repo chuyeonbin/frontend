@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import JumboTron from './JumboTron/JumboTron';
 import CardList from '../../components/CardList/CardList';
 import * as S from './style';

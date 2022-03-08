@@ -20,9 +20,9 @@ const ProfilePage = () => {
           <S.Div>
             <S.H3>성별</S.H3>
             <S.RadioWrap>
-              <S.Radio value="남" name="jender" id="male" checked />
+              <S.Radio value="남" name="gender" id="male" checked />
               <S.Label for="male">남</S.Label>
-              <S.Radio value="여" name="jender" id="female" />
+              <S.Radio value="여" name="gender" id="female" />
               <S.Label for="female">여</S.Label>
             </S.RadioWrap>
           </S.Div>
