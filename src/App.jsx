@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/post/upload" element={<PostUploadPage />} />
-          <Route path="/post/:id" element={<PostDetailPage />} />
+          <Route path="/posts/:id" element={<PostDetailPage />} />
           <Route path="/restaurant" element={<RestaurantPage />} />
           <Route path="/oauth/*" element={<OauthCallbackPage />} />
         </Routes>
