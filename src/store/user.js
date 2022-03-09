@@ -73,7 +73,6 @@ const userSlice = createSlice({
     },
     [insertUser.fulfilled]: (state, { payload }) => {
       const user = state.user;
-      console.log(payload.imageUrl);
       user.imageUrl = payload.imageUrl;
       user.profileSaveUser = true;
     },
