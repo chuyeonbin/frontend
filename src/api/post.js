@@ -14,6 +14,11 @@ class Post {
     const post = await this.request.get('post');
     return post;
   }
+
+  async getComments() {
+    const comments = await this.request.get('comments');
+    return comments;
+  }
 }
 
 const postAPI = new Post(httpInstance);
