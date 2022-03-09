@@ -5,8 +5,8 @@ import * as S from './style';
 const PostList = ({ posts }) => {
   return (
     <S.PostList>
-      {posts.map((post, index) => (
-        <Post key={index} post={post} />
+      {posts.map(post => (
+        <Post key={post.postId} post={post} />
       ))}
     </S.PostList>
   );

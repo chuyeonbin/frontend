@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 import {
   faThumbsUp,
@@ -16,15 +17,20 @@ const Post = ({ post }) => {
     commentCount,
     viewCount,
     profileUrl,
+    postId,
   } = post;
 
-  console.log(post);
+  const navigate = useNavigate();
+
+  const goToPage = () => {
+    navigate(`post/${postId}`);
+  };
 
   return (
     <S.Post>
       <S.Header>등록날짜: {createdAt}</S.Header>
       <S.Content>
-        <S.Title>{title}</S.Title>
+        <S.Title onClick={goToPage}>{title}</S.Title>
         <S.ContentInFo>
           <S.ContentItem>
             <S.ThumbsUp icon={faThumbsUp} />
