@@ -7,33 +7,43 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const Post = ({ post }) => {
-  const { date, title, address, nickName, thumbsUp, comment, view, userImg } =
-    post;
+  const {
+    createdAt,
+    title,
+    address,
+    username,
+    likeCount,
+    commentCount,
+    viewCount,
+    profileUrl,
+  } = post;
+
+  console.log(post);
 
   return (
     <S.Post>
-      <S.Header>등록날짜: {date}</S.Header>
+      <S.Header>등록날짜: {createdAt}</S.Header>
       <S.Content>
         <S.Title>{title}</S.Title>
         <S.ContentInFo>
           <S.ContentItem>
             <S.ThumbsUp icon={faThumbsUp} />
-            <S.Count>{thumbsUp}</S.Count>
+            <S.Count>{likeCount}</S.Count>
           </S.ContentItem>
           <S.ContentItem>
             <S.Comment icon={faCommentDots} />
-            <S.Count>{comment}</S.Count>
+            <S.Count>{commentCount}</S.Count>
           </S.ContentItem>
           <S.ContentItem>
             <S.View icon={faEye} />
-            <S.Count>{view}</S.Count>
+            <S.Count>{viewCount}</S.Count>
           </S.ContentItem>
         </S.ContentInFo>
       </S.Content>
       <S.Footer>
-        <S.UserImg />
+        <S.UserImg img={profileUrl} />
         <S.UserInFo>
-          <S.NickName>{nickName}</S.NickName>
+          <S.NickName>{username}</S.NickName>
           <S.Address>{address}</S.Address>
         </S.UserInFo>
         <S.ChatButton name={'1:1 채팅하기'} />

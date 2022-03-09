@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import JumboTron from './JumboTron/JumboTron';
 import Posts from '../../components/Posts/Posts';
+import postAPI from '../../api/post';
 import * as S from './style';
 
 const MainPage = () => {
   const [posts, setPosts] = useState([]);
 
-  useEffect(() => {});
+  useEffect(() => {
+    postAPI
+      .getPosts() //
+      .then(res => {
+        setPosts(res.data.content);
+      });
+  }, []);
 
   return (
     <>
