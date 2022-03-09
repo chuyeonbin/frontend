@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import testImg from '../../../images/doji.png';
 
 export const CommentItem = styled.li`
   padding-bottom: 1rem;
@@ -15,10 +14,10 @@ export const UserWrap = styled.div`
   align-items: center;
 `;
 
-export const UserImg = styled.img.attrs({
-  src: `${testImg}`,
+export const UserImg = styled.img.attrs(props => ({
+  src: props.url,
   alt: '사용자이미지',
-})`
+}))`
   width: 60px;
   height: 60px;
   border-radius: 50%;

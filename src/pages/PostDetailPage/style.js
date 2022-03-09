@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import CommonPage from '../../components/CommonPage/CommonPage';
-import testImg from '../../images/doji.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const PostDetailPage = styled(CommonPage)``;
@@ -42,10 +41,10 @@ export const UploaderInfo = styled.div`
   flex-direction: column;
 `;
 
-export const UploaderImg = styled.img.attrs({
-  src: `${testImg}`,
+export const UploaderImg = styled.img.attrs(props => ({
+  src: props.url,
   alt: '유저 이미지',
-})`
+}))`
   width: 75px;
   height: 75px;
   border: 1px solid grey;
