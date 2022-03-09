@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
 import useModal from '../../hooks/useModal';
 import Modal from '../Modal/Modal';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
   const navigate = useNavigate();
   const [showModal, toggleModal] = useModal();
-  const [isLogin, setLogin] = useState(false);
+  const user = useSelector(state => state.user.user);
   const goToPage = url => navigate(url);
 
   return (
@@ -25,8 +26,15 @@ const Header = () => {
               BEST 맛집
             </S.MenuButton>
           </S.MenuList>
+          {user.profileSaveUser === true ? (
+            <S.MenuList>
+              <S.MenuButton>{user.name}</S.MenuButton>
+            </S.MenuList>
+          ) : (
+            <></>
+          )}
         </S.Menu>
-        {isLogin === true ? (
+        {user.profileSaveUser === true ? (
           <S.UserImage />
         ) : (
           <S.LoginButton onClick={toggleModal}>로그인</S.LoginButton>
