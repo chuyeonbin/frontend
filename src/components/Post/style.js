@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import testImg from '../../images/doji.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Card = styled.li`
+export const Post = styled.li`
   margin: 1rem;
   width: 100%;
   border: 2px solid ${({ theme }) => theme.color.grey};

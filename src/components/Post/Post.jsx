@@ -6,12 +6,12 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Card = ({ card }) => {
+const Post = ({ post }) => {
   const { date, title, address, nickName, thumbsUp, comment, view, userImg } =
-    card;
+    post;
 
   return (
-    <S.Card>
+    <S.Post>
       <S.Header>등록날짜: {date}</S.Header>
       <S.Content>
         <S.Title>{title}</S.Title>
@@ -38,8 +38,8 @@ const Card = ({ card }) => {
         </S.UserInFo>
         <S.ChatButton name={'1:1 채팅하기'} />
       </S.Footer>
-    </S.Card>
+    </S.Post>
   );
 };
 
-export default Card;
+export default Post;
