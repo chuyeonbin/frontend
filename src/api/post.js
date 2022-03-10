@@ -19,6 +19,11 @@ class Post {
     const comments = await this.request.get('comments');
     return comments;
   }
+
+  async uplaodComments(postId, content) {
+    // posts/{postId}/comments
+    return await this.request.post('uplaodComments', content);
+  }
 }
 
 const postAPI = new Post(httpInstance);
