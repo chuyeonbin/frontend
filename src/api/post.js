@@ -15,6 +15,11 @@ class Post {
     return post;
   }
 
+  async uploadPost(postData) {
+    //posts
+    return await this.request.post('uploadPost', postData);
+  }
+
   async getComments() {
     const comments = await this.request.get('comments');
     return comments;
