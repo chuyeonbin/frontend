@@ -22,7 +22,7 @@ class Post {
 
   async uplaodComments(postId, content) {
     // posts/{postId}/comments
-    return await this.request.post('uplaodComments', content);
+    return await this.request.post('uploadComments', content);
   }
 }
 
