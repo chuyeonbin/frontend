@@ -15,6 +15,10 @@ const PostDetailPage = () => {
   const [comments, setComments] = useState([]);
   const id = useParams();
 
+  const addComment = comment => {
+    setComments([comment, ...comments]);
+  };
+
   useEffect(() => {
     Promise.all([postAPI.getPost(), postAPI.getComments()]) //
       .then(res => {
@@ -57,7 +61,7 @@ const PostDetailPage = () => {
             </S.IconList>
           </S.IconWrap>
         </S.PostFooter>
-        <CommentList comments={comments} />
+        <CommentList addComment={addComment} comments={comments} />
       </S.PostWrap>
     </S.PostDetailPage>
   );
