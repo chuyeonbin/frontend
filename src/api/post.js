@@ -29,6 +29,11 @@ class Post {
     // posts/{postId}/comments
     return await this.request.post('uploadComments', content);
   }
+
+  async getLike(postId, liked) {
+    //(patch) ​posts​/{postId}​/likes
+    return await this.request.post('like', { liked });
+  }
 }
 
 const postAPI = new Post(httpInstance);

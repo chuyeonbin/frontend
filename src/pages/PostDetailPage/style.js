@@ -96,15 +96,10 @@ export const ThumbsUp = styled(FontAwesomeIcon).attrs(props => ({
 }))`
   cursor: pointer;
   color: ${props => {
-    console.log(props.liked);
     return props.liked === 'true'
       ? ({ theme }) => theme.color.purple
       : ({ theme }) => theme.color.grey;
   }};
-
-  &:hover {
-    color: ${({ theme }) => theme.color.purple};
-  }
 `;
 
 export const Comment = styled(FontAwesomeIcon).attrs(props => ({

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import postAPI from '../../api/post';
 import * as S from './style';
@@ -13,16 +13,31 @@ import CommentList from './CommentList/CommentList';
 const PostDetailPage = () => {
   const [content, setContent] = useState({});
   const [comments, setComments] = useState([]);
+
+  const timerRef = useRef(0);
   const id = useParams();
 
   const addComment = comment => {
     setComments([comment, ...comments]);
   };
 
+  const toggleLike = () => {
+    const likeCount = content.liked
+      ? content.likeCount - 1
+      : content.likeCount + 1;
+    setContent({ ...content, liked: !content.liked, likeCount });
+    //좋아요 이벤트 디바운싱 처리
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    timerRef.current = setTimeout(async () => {
+      await postAPI.getLike(id, !content.liked);
+    }, 1000);
+  };
+
   useEffect(() => {
     Promise.all([postAPI.getPost(), postAPI.getComments()]) //
       .then(res => {
-        console.log();
         setContent(res[0].data);
         setComments(res[1].data.content);
       });
@@ -50,6 +65,7 @@ const PostDetailPage = () => {
           <S.IconWrap>
             <S.IconList>
               <S.ThumbsUp
+                onClick={toggleLike}
                 liked={content.liked ? 'true' : 'false'}
                 icon={faThumbsUp}
               />
