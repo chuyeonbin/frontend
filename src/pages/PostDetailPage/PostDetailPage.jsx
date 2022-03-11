@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { setShowModal } from '../../store/modal';
 import postAPI from '../../api/post';
 import * as S from './style';
 import {
@@ -11,6 +13,8 @@ import Button from '../../components/Button/Button';
 import CommentList from './CommentList/CommentList';
 
 const PostDetailPage = () => {
+  const user = useSelector(state => state.user.user);
+  const dispatch = useDispatch();
   const [content, setContent] = useState({});
   const [comments, setComments] = useState([]);
 
@@ -22,10 +26,17 @@ const PostDetailPage = () => {
   };
 
   const toggleLike = () => {
+    //좋아요 버튼 클릭시 유저가 없으면 모달창 띄우기
+    if (!user.profileSaveUser) {
+      dispatch(setShowModal(true));
+      return;
+    }
+
     const likeCount = content.liked
       ? content.likeCount - 1
       : content.likeCount + 1;
     setContent({ ...content, liked: !content.liked, likeCount });
+
     //좋아요 이벤트 디바운싱 처리
     if (timerRef.current) {
       clearTimeout(timerRef.current);
