@@ -25,7 +25,7 @@ class Post {
     return comments;
   }
 
-  async uplaodComments(postId, content) {
+  async uploadComments(postId, content) {
     // posts/{postId}/comments
     return await this.request.post('uploadComments', content);
   }

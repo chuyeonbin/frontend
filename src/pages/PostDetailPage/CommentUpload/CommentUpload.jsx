@@ -21,9 +21,9 @@ const CommentUpload = ({ addComment }) => {
 
     if (!user.profileSaveUser) {
       dispatch(setShowModal(true));
+      return;
     }
 
-    console.log(user);
     const comment = {
       content: textRef.current.value,
       address: user.address,
@@ -32,7 +32,7 @@ const CommentUpload = ({ addComment }) => {
       createdAt: Date(),
     };
     addComment(comment);
-    postAPI.uplaodComments(id, comment);
+    postAPI.uploadComments(id, comment);
     textRef.current.value = '';
   };
 
