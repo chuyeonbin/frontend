@@ -22,6 +22,7 @@ const PostDetailPage = () => {
   useEffect(() => {
     Promise.all([postAPI.getPost(), postAPI.getComments()]) //
       .then(res => {
+        console.log();
         setContent(res[0].data);
         setComments(res[1].data.content);
       });
@@ -48,7 +49,10 @@ const PostDetailPage = () => {
           <Button name="1:1 채팅하기" />
           <S.IconWrap>
             <S.IconList>
-              <S.ThumbsUp icon={faThumbsUp} />
+              <S.ThumbsUp
+                liked={content.liked ? 'true' : 'false'}
+                icon={faThumbsUp}
+              />
               <S.Count>{content.likeCount}</S.Count>
             </S.IconList>
             <S.IconList>
