@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import Button from '../Button/Button';
-import testImg from '../../images/doji.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const Card = styled.li`
+export const Post = styled.li`
   margin: 1rem;
   width: 100%;
   border: 2px solid ${({ theme }) => theme.color.grey};
@@ -86,10 +85,10 @@ export const Footer = styled.div`
   align-items: center;
 `;
 
-export const UserImg = styled.img.attrs({
-  src: `${testImg}`,
+export const UserImg = styled.img.attrs(props => ({
+  src: props.img,
   alt: '유저 이미지',
-})`
+}))`
   width: 65px;
   height: 65px;
   border: 1px solid grey;
