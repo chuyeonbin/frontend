@@ -10,28 +10,31 @@ class Post {
     return posts;
   }
 
-  async getPost() {
+  async getPost(postId) {
+    // const post = await this.request.get(`posts/${postId}`);
     const post = await this.request.get('post');
     return post;
   }
 
   async uploadPost(postData) {
-    //posts
+    // return await this.request.post('posts', postData);
     return await this.request.post('uploadPost', postData);
   }
 
-  async getComments() {
+  async getComments(postId) {
+    // const comments = await this.request.get(`posts/${postId}/comments`);
     const comments = await this.request.get('comments');
     return comments;
   }
 
   async uploadComments(postId, content) {
     // posts/{postId}/comments
+    //return await this.request.post(`posts/${postId}/comments`, content);
     return await this.request.post('uploadComments', content);
   }
 
   async getLike(postId, liked) {
-    //(patch) ​posts​/{postId}​/likes
+    // return await this.request.patch(`​posts​/{postId}​/likes`, liked);
     return await this.request.post('like', { liked });
   }
 }
