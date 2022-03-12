@@ -16,6 +16,12 @@ class Auth {
     const res = await this.request.get('inserUser', userData);
     return res;
   }
+
+  async getUserProfile() {
+    // const userData = await this.request.get('users/profile/me');
+    const userData = await this.request.get('users');
+    return userData;
+  }
 }
 
 const auth = new Auth(httpInstance);
