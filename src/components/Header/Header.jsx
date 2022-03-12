@@ -17,25 +17,29 @@ const Header = () => {
       <S.MenuBar>
         <S.Menu>
           <S.MenuList>
-            <S.MenuButton onClick={() => goToPage('/post/upload')}>
-              게시글 등록
-            </S.MenuButton>
-          </S.MenuList>
-          <S.MenuList>
             <S.MenuButton onClick={() => goToPage('/restaurant')}>
               BEST 맛집
             </S.MenuButton>
           </S.MenuList>
-          {user.profileSaveUser === true ? (
-            <S.MenuList>
-              <S.MenuButton>{user.name}</S.MenuButton>
-            </S.MenuList>
+          {user.profileSaveUser ? (
+            <>
+              <S.MenuList>
+                <S.MenuButton onClick={() => goToPage('/post/upload')}>
+                  게시글 등록
+                </S.MenuButton>
+              </S.MenuList>
+              <S.MenuList>
+                <S.MenuButton onClick={() => goToPage('/post/upload')}>
+                  등록한 게시글
+                </S.MenuButton>
+              </S.MenuList>
+            </>
           ) : (
             <></>
           )}
         </S.Menu>
-        {user.profileSaveUser === true ? (
-          <S.UserImage />
+        {user.profileSaveUser ? (
+          <S.UserImage url={user.imageUrl} />
         ) : (
           <S.LoginButton onClick={toggleModal}>로그인</S.LoginButton>
         )}

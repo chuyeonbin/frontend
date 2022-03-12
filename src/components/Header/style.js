@@ -46,10 +46,10 @@ export const LoginButton = styled.button`
   background: none;
 `;
 
-export const UserImage = styled.img.attrs({
-  src: `${testImg}`,
+export const UserImage = styled.img.attrs(props => ({
+  src: props.url,
   alt: '사용자이미지',
-})`
+}))`
   width: 60px;
   height: 60px;
   border-radius: 50%;
