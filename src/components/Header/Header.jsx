@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
+import ProfileModal from './ProfileModal/ProfileModal';
 import useModal from '../../hooks/useModal';
 import Modal from '../Modal/Modal';
 import { useSelector } from 'react-redux';
@@ -8,8 +9,13 @@ import { useSelector } from 'react-redux';
 const Header = () => {
   const navigate = useNavigate();
   const [showModal, toggleModal] = useModal();
+  const [toggleProfile, setToggleProfile] = useState(false);
   const user = useSelector(state => state.user.user);
   const goToPage = url => navigate(url);
+
+  const onToggleProfile = () => {
+    setToggleProfile(!toggleProfile);
+  };
 
   return (
     <S.Header>
@@ -39,7 +45,10 @@ const Header = () => {
           )}
         </S.Menu>
         {user.profileSaveUser ? (
-          <S.UserImage url={user.imageUrl} />
+          <S.Profile>
+            <S.ProfileImage url={user.imageUrl} onClick={onToggleProfile} />
+            <ProfileModal toggleProfile={toggleProfile} />
+          </S.Profile>
         ) : (
           <S.LoginButton onClick={toggleModal}>로그인</S.LoginButton>
         )}

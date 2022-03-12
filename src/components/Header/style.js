@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import logo from '../../images/logo.png';
-import testImg from '../../images/doji.png';
 
 export const Header = styled.header`
   padding: 1.3rem;
@@ -46,7 +45,11 @@ export const LoginButton = styled.button`
   background: none;
 `;
 
-export const UserImage = styled.img.attrs(props => ({
+export const Profile = styled.div`
+  position: relative;
+`;
+
+export const ProfileImage = styled.img.attrs(props => ({
   src: props.url,
   alt: '사용자이미지',
 }))`
