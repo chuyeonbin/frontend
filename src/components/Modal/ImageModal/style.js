@@ -26,7 +26,7 @@ export const ImageUpload = styled.div`
 `;
 
 export const UserImg = styled.img.attrs(props => ({
-  src: props.src || testImg,
+  src: props.url,
   alt: '유저 이미지',
 }))`
   width: 100px;
