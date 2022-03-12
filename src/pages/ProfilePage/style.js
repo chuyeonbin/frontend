@@ -9,6 +9,7 @@ export const ProfileWrap = styled.div`
   margin-bottom: 7rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const UserForm = styled.form`
