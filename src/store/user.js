@@ -54,6 +54,9 @@ const userSlice = createSlice({
     setPhone(state, action) {
       state.user.phone = action.payload;
     },
+    setImage(state, action) {
+      state.user.imageUrl = action.payload;
+    },
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, { payload }) => {
@@ -81,7 +84,7 @@ const userSlice = createSlice({
 
 const user = userSlice.reducer;
 
-export const { setName, setGender, setAddress, setEmail, setPhone } =
+export const { setName, setGender, setAddress, setEmail, setPhone, setImage } =
   userSlice.actions;
 
 export { fetchUser, insertUser };

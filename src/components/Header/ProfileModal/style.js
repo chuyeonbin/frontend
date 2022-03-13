@@ -4,7 +4,6 @@ export const ProfileModal = styled.ul`
   position: absolute;
   left: -130px;
   display: ${props => {
-    console.log(props.toggle);
     return props.toggle ? 'flex' : 'none';
   }};
   flex-direction: column;
