@@ -23,7 +23,7 @@ const Post = ({ post }) => {
   const navigate = useNavigate();
 
   const goToPage = () => {
-    navigate(`posts/${postId}`);
+    navigate(`/posts/${postId}`);
   };
 
   return (
