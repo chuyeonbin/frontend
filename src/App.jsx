@@ -5,6 +5,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import MainPage from './pages/MainPage/MainPage';
 import PostUploadPage from './pages/PostUploadPage/PostUploadPage';
+import EditPage from './pages/EditPage/EditPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import PostDetailPage from './pages/PostDetailPage/PostDetailPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
@@ -19,7 +21,9 @@ const App = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/post/upload" element={<PostUploadPage />} />
+          <Route path="/post/edit" element={<EditPage />} />
           <Route path="/posts/:id" element={<PostDetailPage />} />
+          <Route path="/posts/register" element={<RegisterPage />} />
           <Route path="/restaurant" element={<RestaurantPage />} />
           <Route path="/oauth/*" element={<OauthCallbackPage />} />
         </Routes>

@@ -6,8 +6,10 @@ import {
   faCommentDots,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
+import postAPI from '../../../api/post';
 
-const Post = ({ post }) => {
+const RegisterPost = ({ registerPost }) => {
+  const navigate = useNavigate();
   const {
     createdAt,
     title,
@@ -18,19 +20,31 @@ const Post = ({ post }) => {
     viewCount,
     profileUrl,
     postId,
-  } = post;
+    content,
+  } = registerPost;
 
-  const navigate = useNavigate();
+  const goToPage = (url, postId) => {
+    navigate(url, {
+      state: {
+        postId,
+        title,
+        content,
+      },
+    });
+  };
 
-  const goToPage = () => {
-    navigate(`/posts/${postId}`);
+  const onDeletePost = () => {
+    postAPI.deletePost(postId).then(res => {
+      alert('삭제가 완료 되었습니다.');
+      navigate('/');
+    });
   };
 
   return (
-    <S.Post>
+    <S.RegisterPost>
       <S.Header>등록날짜: {createdAt}</S.Header>
       <S.Content>
-        <S.Title onClick={goToPage}>{title}</S.Title>
+        <S.Title onClick={() => goToPage(`/posts/${postId}`)}>{title}</S.Title>
         <S.ContentInFo>
           <S.ContentItem>
             <S.ThumbsUp icon={faThumbsUp} />
@@ -52,10 +66,14 @@ const Post = ({ post }) => {
           <S.NickName>{username}</S.NickName>
           <S.Address>{address}</S.Address>
         </S.UserInFo>
-        <S.ChatButton name={'1:1 채팅하기'} />
+        <S.EditButton
+          name="수정"
+          onClick={() => goToPage('/post/edit', postId)}
+        />
+        <S.DeleteButton color="red" name="삭제" onClick={onDeletePost} />
       </S.Footer>
-    </S.Post>
+    </S.RegisterPost>
   );
 };
 
-export default Post;
+export default RegisterPost;

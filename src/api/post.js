@@ -21,6 +21,16 @@ class Post {
     return await this.request.post('uploadPost', postData);
   }
 
+  async editPost(postData, postId) {
+    // return await this.request.patch('posts/{postId}', postData);
+    return await this.request.post('edit', postData);
+  }
+
+  async deletePost(postId) {
+    //return await this.request.delete('posts/{postId}');
+    return await this.request.get('deletePost');
+  }
+
   async getComments(postId) {
     // const comments = await this.request.get(`posts/${postId}/comments`);
     const comments = await this.request.get('comments');
