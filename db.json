@@ -14,5 +14,285 @@
   "inserUser": {
     "imageUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
     "message": "ㅁㄴㅇㅁㄴㅇㅁㄴ"
-  }
+  },
+  "logout": [],
+  "modifyUser": {
+    "imageUrl": "안녕하세요.png",
+    "message": "ㅁㄴㅇㅁㄴㅇㅁㄴ"
+  },
+  "posts": {
+    "content": [
+      {
+        "postId": 823123,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      },
+      {
+        "postId": 664753,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      },
+      {
+        "postId": 223552,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      },
+      {
+        "postId": 9876567,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      },
+      {
+        "postId": 256902,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      },
+      {
+        "postId": 213448,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      },
+      {
+        "postId": 886588,
+        "commentCount": 2,
+        "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+        "createdAt": "2022-03-09T05:50:37.536Z",
+        "likeCount": 4,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+        "viewCount": 4,
+        "username": "끼야아아알"
+      }
+    ],
+    "empty": true,
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 0,
+    "pageable": {
+      "offset": 0,
+      "pageNumber": 0,
+      "pageSize": 0,
+      "paged": true,
+      "sort": {
+        "empty": true,
+        "sorted": true,
+        "unsorted": true
+      },
+      "unpaged": true
+    },
+    "size": 0,
+    "sort": {
+      "empty": true,
+      "sorted": true,
+      "unsorted": true
+    },
+    "totalElements": 0,
+    "totalPages": 0
+  },
+  "post": {
+    "commentCount": 3,
+    "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴ",
+    "createdAt": "2022-03-09T05:50:37.536Z",
+    "likeCount": 1,
+    "liked": false,
+    "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+    "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+    "viewCount": 4,
+    "username": "끼야아아알",
+    "address": "경기도 군포시 금정동"
+  },
+  "comments": {
+    "content": [
+      {
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, laboriosam vel ex omnis nostrum ad quam eum distinctio expedita aut rem voluptatem sit deleniti facilis sint suscipit itaque eius doloribus!",
+        "createdAt": "2022-03-09T08:47:16.921Z",
+        "likeCount": 4,
+        "liked": true,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "username": "꺄갸갸갸갹111",
+        "address": "경기도 군포시 오금동"
+      },
+      {
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, laboriosam vel ex omnis nostrum ad quam eum distinctio expedita aut rem voluptatem sit deleniti facilis sint suscipit itaque eius doloribus!",
+        "createdAt": "2022-03-09T08:47:16.921Z",
+        "likeCount": 4,
+        "liked": true,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "username": "꺄갸갸갸갹",
+        "address": "경기도 군포시 산본1동"
+      },
+      {
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, laboriosam vel ex omnis nostrum ad quam eum distinctio expedita aut rem voluptatem sit deleniti facilis sint suscipit itaque eius doloribus!",
+        "createdAt": "2022-03-09T08:47:16.921Z",
+        "likeCount": 4,
+        "liked": true,
+        "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+        "username": "꺄갸갸갸갹",
+        "address": "경기도 군포시 산본2동"
+      }
+    ],
+    "empty": true,
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 0,
+    "pageable": {
+      "offset": 0,
+      "pageNumber": 0,
+      "pageSize": 0,
+      "paged": true,
+      "sort": {
+        "empty": true,
+        "sorted": true,
+        "unsorted": true
+      },
+      "unpaged": true
+    },
+    "size": 0,
+    "sort": {
+      "empty": true,
+      "sorted": true,
+      "unsorted": true
+    },
+    "totalElements": 0,
+    "totalPages": 0
+  },
+  "uploadComments": {
+    "content": "밥드시고 싶으면 010-4110-7541",
+    "address": "경기도 군포시 산본동",
+    "username": "추연빈",
+    "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+    "createdAt": "Mon Mar 14 2022 00:10:29 GMT+0900 (한국 표준시)"
+  },
+  "uploadPost": [
+    {
+      "title": "ㅔ[ㅣㅔ[ㅣㅔ[ㅣ[ㅔㅣ[ㅔㅣ[ㅔㅣ",
+      "content": "ㅣㅔ[ㅣ[ㅔㅣㅔ[ㅣ[ㅔㅣ[ㅔ[ㅔㅣㅣㅔ[ㅔㅣ[ㅔㅔ[ㅔ[ㅣ[ㅔㅔ[ㅔ[",
+      "id": 1
+    },
+    {
+      "title": "ㅣ",
+      "content": "ㅣ",
+      "id": 2
+    },
+    {
+      "title": "kasdas",
+      "content": "kl;kl;",
+      "id": 3
+    }
+  ],
+  "like": [
+    {
+      "liked": false,
+      "id": 1
+    },
+    {
+      "liked": false,
+      "id": 2
+    },
+    {
+      "liked": false,
+      "id": 3
+    },
+    {
+      "liked": false,
+      "id": 4
+    },
+    {
+      "liked": true,
+      "id": 5
+    },
+    {
+      "liked": true,
+      "id": 6
+    },
+    {
+      "liked": true,
+      "id": 7
+    },
+    {
+      "liked": true,
+      "id": 8
+    },
+    {
+      "liked": false,
+      "id": 9
+    },
+    {
+      "liked": true,
+      "id": 10
+    }
+  ],
+  "users": {
+    "address": {
+      "city": "경기도 군포시 산본동",
+      "street": "string",
+      "zipcode": "string"
+    },
+    "email": "cndusqls98@gmail.com",
+    "gender": "MAN",
+    "imgUrl": "ddd",
+    "nickName": "끼야아아알",
+    "phoneNumber": ""
+  },
+  "edit": [
+    {
+      "title": "안녕하세요",
+      "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴaskdpoasdasodksaopdkaspodkasdkaspo",
+      "id": 1
+    },
+    {
+      "title": "안녕하세요",
+      "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴaskdpoasdasodksaopdkaspodkasdkaspo",
+      "id": 2
+    },
+    {
+      "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+      "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴdkasdaspdkaspdkspa[dkasp[dkp[",
+      "id": 3
+    },
+    {
+      "title": "안녕하세요 밥을 같이 먹으실 분들을 구하고 있어요. 같이드실분들은 1:1채팅 부탁드립니다.",
+      "content": "ㅁ느이;ㅁㄴ은ㅁ;이,ㅊ;ㅣㅋㄴㅐㅏㅐㅔㅏㅔㅐㅔㅏㅐㅔ",
+      "id": 4
+    }
+  ],
+  "deletePost": []
 }

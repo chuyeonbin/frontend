@@ -26,6 +26,11 @@ class Post {
     return await this.request.post('edit', postData);
   }
 
+  async deletePost(postId) {
+    //return await this.request.delete('posts/{postId}');
+    return await this.request.delete('deletePost');
+  }
+
   async getComments(postId) {
     // const comments = await this.request.get(`posts/${postId}/comments`);
     const comments = await this.request.get('comments');
