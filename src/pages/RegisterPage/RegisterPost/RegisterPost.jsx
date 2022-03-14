@@ -8,6 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const RegisterPost = ({ registerPost }) => {
+  const navigate = useNavigate();
   const {
     createdAt,
     title,
@@ -18,19 +19,24 @@ const RegisterPost = ({ registerPost }) => {
     viewCount,
     profileUrl,
     postId,
+    content,
   } = registerPost;
 
-  const navigate = useNavigate();
-
-  const goToPage = () => {
-    navigate(`/posts/${postId}`);
+  const goToPage = (url, postId) => {
+    navigate(url, {
+      state: {
+        postId,
+        title,
+        content,
+      },
+    });
   };
 
   return (
     <S.RegisterPost>
       <S.Header>등록날짜: {createdAt}</S.Header>
       <S.Content>
-        <S.Title onClick={goToPage}>{title}</S.Title>
+        <S.Title onClick={() => goToPage(`/posts/${postId}`)}>{title}</S.Title>
         <S.ContentInFo>
           <S.ContentItem>
             <S.ThumbsUp icon={faThumbsUp} />
@@ -52,7 +58,10 @@ const RegisterPost = ({ registerPost }) => {
           <S.NickName>{username}</S.NickName>
           <S.Address>{address}</S.Address>
         </S.UserInFo>
-        <S.EditButton name="수정" />
+        <S.EditButton
+          name="수정"
+          onClick={() => goToPage('/post/edit', postId)}
+        />
         <S.DeleteButton color="red" name="삭제" />
       </S.Footer>
     </S.RegisterPost>
