@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import CommonPage from '../../components/CommonPage/CommonPage';
 
-export const PostEditPage = styled(CommonPage)``;
+export const RegisterPage = styled(CommonPage)``;
 
 export const Message = styled.div`
   text-align: center;

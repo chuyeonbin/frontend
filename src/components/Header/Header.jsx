@@ -35,7 +35,7 @@ const Header = () => {
                 </S.MenuButton>
               </S.MenuList>
               <S.MenuList>
-                <S.MenuButton onClick={() => goToPage('/posts/edit')}>
+                <S.MenuButton onClick={() => goToPage('/posts/register')}>
                   등록한 게시글
                 </S.MenuButton>
               </S.MenuList>

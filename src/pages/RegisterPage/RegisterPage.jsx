@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './style';
-import Posts from '../../components/Posts/Posts';
 import postAPI from '../../api/post';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import RegisterPosts from './RegisterPosts/RegisterPosts';
 
-const PostEditPage = () => {
+const RegisterPage = () => {
   const navigate = useNavigate();
   const user = useSelector(state => state.user.user);
-  const [posts, setPosts] = useState([]);
+  const [registerPosts, setRegisterPosts] = useState([]);
 
   useEffect(() => {
     if (!user.profileSaveUser) {
@@ -20,19 +20,19 @@ const PostEditPage = () => {
     postAPI
       .getPosts() //
       .then(res => {
-        setPosts(res.data.content);
+        setRegisterPosts(res.data.content);
       });
   }, []);
 
   return (
-    <S.PostEditPage title="등록한 게시글">
-      {posts.length > 0 ? (
-        <Posts posts={posts} />
+    <S.RegisterPage title="등록한 게시글">
+      {registerPosts.length > 0 ? (
+        <RegisterPosts registerPosts={registerPosts} />
       ) : (
         <S.Message>등록한 게시글이 없습니다!</S.Message>
       )}
-    </S.PostEditPage>
+    </S.RegisterPage>
   );
 };
 
-export default PostEditPage;
+export default RegisterPage;
