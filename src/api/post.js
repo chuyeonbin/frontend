@@ -28,7 +28,7 @@ class Post {
 
   async deletePost(postId) {
     //return await this.request.delete('posts/{postId}');
-    return await this.request.delete('deletePost');
+    return await this.request.get('deletePost');
   }
 
   async getComments(postId) {

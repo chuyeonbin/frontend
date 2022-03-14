@@ -6,6 +6,7 @@ import {
   faCommentDots,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
+import postAPI from '../../../api/post';
 
 const RegisterPost = ({ registerPost }) => {
   const navigate = useNavigate();
@@ -29,6 +30,13 @@ const RegisterPost = ({ registerPost }) => {
         title,
         content,
       },
+    });
+  };
+
+  const onDeletePost = () => {
+    postAPI.deletePost(postId).then(res => {
+      alert('삭제가 완료 되었습니다.');
+      navigate('/');
     });
   };
 
@@ -62,7 +70,7 @@ const RegisterPost = ({ registerPost }) => {
           name="수정"
           onClick={() => goToPage('/post/edit', postId)}
         />
-        <S.DeleteButton color="red" name="삭제" />
+        <S.DeleteButton color="red" name="삭제" onClick={onDeletePost} />
       </S.Footer>
     </S.RegisterPost>
   );
