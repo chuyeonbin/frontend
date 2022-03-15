@@ -29,6 +29,7 @@ const ProfilePage = () => {
       phone: phoneRef.current.value,
     };
     auth.modifyUser(userData).then(res => {
+      alert('수정이 완료 되었습니다.');
       dispatch(setImage(res.data.imageUrl));
       navigate('/');
     });

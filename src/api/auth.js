@@ -23,6 +23,11 @@ class Auth {
     const res = await this.request.get('modifyUser', userData);
     return res;
   }
+
+  async getUser() {
+    const userData = await this.request.get('auth');
+    return userData;
+  }
 }
 
 const auth = new Auth(httpInstance);

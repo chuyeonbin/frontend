@@ -39,6 +39,10 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
+    setUser(state, action) {
+      console.log('asda');
+      state.user = action.payload;
+    },
     setName(state, action) {
       state.user.name = action.payload;
     },
@@ -57,6 +61,11 @@ const userSlice = createSlice({
     setImage(state, action) {
       state.user.imageUrl = action.payload;
     },
+    resetUser(state, action) {
+      state.user = initialState;
+
+      httpInstance.defaults.headers.common['Authorization'] = '';
+    },
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, { payload }) => {
@@ -69,6 +78,7 @@ const userSlice = createSlice({
       user.gender = payload.gender;
       user.address = payload.address;
       user.phone = payload.phone;
+
       state.loading = false;
     },
     [fetchUser.rejected]: state => {
@@ -84,8 +94,16 @@ const userSlice = createSlice({
 
 const user = userSlice.reducer;
 
-export const { setName, setGender, setAddress, setEmail, setPhone, setImage } =
-  userSlice.actions;
+export const {
+  setUser,
+  setName,
+  setGender,
+  setAddress,
+  setEmail,
+  setPhone,
+  setImage,
+  resetUser,
+} = userSlice.actions;
 
 export { fetchUser, insertUser };
 
