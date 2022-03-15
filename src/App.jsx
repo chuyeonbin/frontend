@@ -23,7 +23,6 @@ const App = () => {
 
   useEffect(() => {
     if (!user.profileSaveUser) {
-      console.log('asdasdsa');
       return;
     }
 

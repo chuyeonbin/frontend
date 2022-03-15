@@ -16,11 +16,11 @@ const OauthCallbackPage = () => {
     if (!code) return;
 
     dispatch(fetchUser(code)).then(res => {
+      console.log(res.payload);
       const profileSaveUser = res.payload.profileSaveUser;
 
       if (!profileSaveUser) {
         //회원가입이 안되있으면
-        console.log(res.payload);
         dispatch(setShowModal(true));
         dispatch(setCount());
       }

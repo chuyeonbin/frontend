@@ -3,7 +3,7 @@ import * as S from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../api/auth';
-import { setImage } from '../../store/user';
+import { resetUser, setImage } from '../../store/user';
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -28,11 +28,23 @@ const ProfilePage = () => {
       name: nameRef.current.value,
       phone: phoneRef.current.value,
     };
+
     auth.modifyUser(userData).then(res => {
       alert('수정이 완료 되었습니다.');
       dispatch(setImage(res.data.imageUrl));
       navigate('/');
     });
+  };
+
+  const onDeleteUser = e => {
+    e.preventDefault();
+    auth
+      .deleteUser() //
+      .then(res => {
+        alert('탈퇴가 완료 되었습니다.');
+        dispatch(resetUser());
+        navigate('/');
+      });
   };
 
   useEffect(() => {
@@ -90,7 +102,7 @@ const ProfilePage = () => {
             <S.H3>핸드폰</S.H3>
             <S.Phone defaultValue={user.phone || ''} ref={phoneRef} />
           </S.Div>
-          <S.DeleteButton name="회원탈퇴" color="red" />
+          <S.DeleteButton name="회원탈퇴" color="red" onClick={onDeleteUser} />
         </S.UserForm>
         <S.ComplateButton name="프로필 수정" onClick={onProfileModify} />
       </S.ProfileWrap>

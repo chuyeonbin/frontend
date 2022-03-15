@@ -40,7 +40,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUser(state, action) {
-      console.log('asda');
       state.user = action.payload;
     },
     setName(state, action) {
@@ -69,6 +68,7 @@ const userSlice = createSlice({
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, { payload }) => {
+      console.log(payload);
       const user = state.user;
       user.id = payload.id;
       user.name = payload.name;
