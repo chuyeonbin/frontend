@@ -6,32 +6,36 @@ class Auth {
   }
 
   async login(code) {
-    // const userData = await this.request.get(`login/oauth/kakao?code=${code}`);
-    const userData = await this.request.get('login');
+    const userData = await this.request.get(`login/oauth/kakao?code=${code}`);
+    // const userData = await this.request.get('login');
     console.log(userData);
     return userData;
   }
 
   async insertUser(userData) {
-    // const res = await this.request.post(`users/profile/me`, userData);
-    console.log(userData);
-    const res = await this.request.get('inserUser', userData, {
+    const res = await this.request.post(`users/profile/me`, userData, {
       headers: {
-        'Content-Type': `multipart/form-data; `,
-      },
+          'Content-Type': `multipart/form-data; `,
+        },
     });
+    console.log(userData);
+    // const res = await this.request.get('inserUser', userData, {
+    //   headers: {
+    //     'Content-Type': `multipart/form-data; `,
+    //   },
+    // });
     return res;
   }
 
   async logout() {
-    // const res = await this.request.post('logout');
-    const res = await this.request.get('logout');
+    const res = await this.request.post('logout');
+    // const res = await this.request.get('logout');
     return res;
   }
 
   async modifyUser(userData) {
-    // const res = await this.request.post(`users/profile/me`, userData);
-    const res = await this.request.get('modifyUser', userData);
+    const res = await this.request.post(`users/profile/me`, userData);
+    // const res = await this.request.get('modifyUser', userData);
     return res;
   }
 
@@ -47,7 +51,7 @@ class Auth {
       'Authorization'
     ] = `Bearer ${localStorage.getItem('accessToken')}`;
 
-    const userData = await this.request.get('auth');
+    const userData = await this.request.get('users/me');
     return userData;
   }
 }

@@ -11,41 +11,42 @@ class Post {
   }
 
   async getPost(postId) {
-    // const post = await this.request.get(`posts/${postId}`);
-    const post = await this.request.get('post');
+    const post = await this.request.get(`posts/${postId}`);
+    // const post = await this.request.get('post');
     return post;
   }
 
   async uploadPost(postData) {
-    // return await this.request.post('posts', postData);
-    return await this.request.post('uploadPost', postData);
+    return await this.request.get('users/me/posts', postData);
+    // return await this.request.post('uploadPost', postData);
   }
 
   async editPost(postData, postId) {
-    // return await this.request.patch('posts/{postId}', postData);
-    return await this.request.post('edit', postData);
+    return await this.request.patch('posts/{postId}', postData);
+    // return await this.request.post('edit', postData);
   }
 
   async deletePost(postId) {
-    //return await this.request.delete('posts/{postId}');
-    return await this.request.get('deletePost');
+    return await this.request.delete('posts/{postId}');
+    // return await this.request.get('deletePost');
   }
 
   async getComments(postId) {
-    // const comments = await this.request.get(`posts/${postId}/comments`);
-    const comments = await this.request.get('comments');
+    const comments = await this.request.get(`posts/${postId}/comments`);
+    // const comments = await this.request.get('comments');
     return comments;
   }
 
   async uploadComments(postId, content) {
     // posts/{postId}/comments
-    //return await this.request.post(`posts/${postId}/comments`, content);
-    return await this.request.post('uploadComments', content);
+    return await this.request.post(`posts/${postId}/comments`, content);
+    // return await this.request.post('uploadComments', content);
   }
 
   async getLike(postId, liked) {
-    // return await this.request.patch(`​posts​/{postId}​/likes`, liked);
-    return await this.request.post('like', { liked });
+    console.log("postId : ", postId, " liked : ", liked);
+    return await this.request.patch(`posts/${postId}/likes`, liked);
+    // return await this.request.post('like', { liked });
   }
 }
 

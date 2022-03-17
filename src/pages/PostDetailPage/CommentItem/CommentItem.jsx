@@ -8,7 +8,7 @@ const CommentItem = ({ comment }) => {
         <S.UserImg url={comment.profileUrl} />
         <S.UserInfo>
           <S.NickName>{comment.username}</S.NickName>
-          <S.Address>{comment.address}</S.Address>
+          {/* <S.Address>{comment.address}</S.Address> */}
         </S.UserInfo>
         <S.Date>{comment.createdAt}</S.Date>
       </S.UserWrap>

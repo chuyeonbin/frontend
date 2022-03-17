@@ -18,7 +18,7 @@ const RegisterPage = () => {
     }
 
     postAPI
-      .getPosts() //
+      .uploadPost() //
       .then(res => {
         setRegisterPosts(res.data.content);
       });

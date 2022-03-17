@@ -13,7 +13,7 @@ const RegisterPost = ({ registerPost }) => {
   const {
     createdAt,
     title,
-    address,
+    // address,
     username,
     likeCount,
     commentCount,
@@ -64,7 +64,7 @@ const RegisterPost = ({ registerPost }) => {
         <S.UserImg img={profileUrl} />
         <S.UserInFo>
           <S.NickName>{username}</S.NickName>
-          <S.Address>{address}</S.Address>
+          {/* <S.Address>{address}</S.Address> */}
         </S.UserInFo>
         <S.EditButton
           name="수정"

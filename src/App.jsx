@@ -22,6 +22,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("useEffect user : ", user);
     if (!user.profileSaveUser) {
       return;
     }

@@ -19,7 +19,7 @@ const PostDetailPage = () => {
   const [comments, setComments] = useState([]);
 
   const timerRef = useRef(0);
-  const id = useParams();
+  const { id } = useParams();
 
   const addComment = comment => {
     setComments([comment, ...comments]);
@@ -47,7 +47,7 @@ const PostDetailPage = () => {
   };
 
   useEffect(() => {
-    Promise.all([postAPI.getPost(), postAPI.getComments()]) //
+    Promise.all([postAPI.getPost(id), postAPI.getComments(id)]) //
       .then(res => {
         setContent(res[0].data);
         setComments(res[1].data.content);
@@ -65,7 +65,7 @@ const PostDetailPage = () => {
             <S.UploaderImg url={content.profileUrl} />
             <S.UploaderInfo>
               <S.UploaderNickName>{content.username}</S.UploaderNickName>
-              <S.UploaderAddress>{content.address}</S.UploaderAddress>
+              {/* <S.UploaderAddress>{content.address}</S.UploaderAddress> */}
             </S.UploaderInfo>
           </S.UploaderWrap>
           <S.Title>{content.title}</S.Title>
