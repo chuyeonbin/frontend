@@ -29,12 +29,13 @@ const App = () => {
     auth
       .getUser() //
       .then(res => {
-        console.log('유저 정보 업데이트');
+        console.log(res.data);
         dispatch(setUser(res.data));
       })
       .catch(() => {
         alert('세션이 만료 되었습니다.');
         dispatch(resetUser());
+        localStorage.removeItem('accessToken');
       });
   }, [navigate]);
   return (

@@ -21,7 +21,7 @@ const NameModal = () => {
       <S.Title>닉네임을 정해주세요!</S.Title>
       <S.InputWrap>
         <S.Span>반가워요.</S.Span>
-        <S.NameInput value={user.name} onChange={handleInputChage} />
+        <S.NameInput value={user.nickName} onChange={handleInputChage} />
         <S.Span>님🎉</S.Span>
       </S.InputWrap>
       <S.NextButton name={'다음'} onClick={handleClick} />

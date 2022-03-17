@@ -67,7 +67,7 @@ const ProfilePage = () => {
           </S.ImageUpload>
           <S.Div>
             <S.H3>닉네임</S.H3>
-            <S.Name defaultValue={user.name || ''} ref={nameRef} />
+            <S.Name defaultValue={user.nickName || ''} ref={nameRef} />
           </S.Div>
           <S.Div>
             <S.H3>성별</S.H3>
@@ -75,19 +75,19 @@ const ProfilePage = () => {
               <S.Radio
                 value="남"
                 name="gender"
-                id="male"
-                checked={gender === 'male'}
+                id="MAN"
+                checked={gender === 'MAN'}
                 onChange={handleGenderChange}
               />
-              <S.Label htmlFor="male">남</S.Label>
+              <S.Label htmlFor="MAN">남</S.Label>
               <S.Radio
                 value="여"
                 name="gender"
-                id="female"
-                checked={gender === 'female'}
+                id="WOMAN"
+                checked={gender === 'WOMAN'}
                 onChange={handleGenderChange}
               />
-              <S.Label htmlFor="female">여</S.Label>
+              <S.Label htmlFor="WOMAN">여</S.Label>
             </S.RadioWrap>
           </S.Div>
           <S.Div>
@@ -100,7 +100,7 @@ const ProfilePage = () => {
           </S.Div>
           <S.Div>
             <S.H3>핸드폰</S.H3>
-            <S.Phone defaultValue={user.phone || ''} ref={phoneRef} />
+            <S.Phone defaultValue={user.phoneNumber || ''} ref={phoneRef} />
           </S.Div>
           <S.DeleteButton name="회원탈퇴" color="red" onClick={onDeleteUser} />
         </S.UserForm>

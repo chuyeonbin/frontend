@@ -16,7 +16,6 @@ const OauthCallbackPage = () => {
     if (!code) return;
 
     dispatch(fetchUser(code)).then(res => {
-      console.log(res.payload);
       const profileSaveUser = res.payload.profileSaveUser;
 
       if (!profileSaveUser) {

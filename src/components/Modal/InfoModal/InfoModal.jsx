@@ -43,16 +43,15 @@ function InfoModal({ closeModal }) {
           <S.Radio
             value="남"
             name="gender"
-            id="male"
-            checked={user.gender === 'male'}
+            id="MAN"
+            defaultChecked
             onChange={handleGenderChange}
           />
           <S.Label htmlFor="male">남</S.Label>
           <S.Radio
             value="여"
             name="gender"
-            id="female"
-            checked={user.gender === 'female'}
+            id="WOMAN"
             onChange={handleGenderChange}
           />
           <S.Label htmlFor="female">여</S.Label>

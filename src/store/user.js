@@ -16,6 +16,7 @@ const fetchUser = createAsyncThunk('user/login', async (code, thunkAPI) => {
 const insertUser = createAsyncThunk(
   'user/signUp',
   async (userData, thunkAPI) => {
+    console.log(userData);
     const response = await auth.insertUser(userData);
     return response.data;
   }
@@ -24,13 +25,13 @@ const insertUser = createAsyncThunk(
 const initialState = {
   user: {
     id: null,
-    name: null,
+    nickName: null,
     email: null,
     imageUrl: null,
     profileSaveUser: false,
     gender: null,
     address: null,
-    phone: null,
+    phoneNumber: null,
   },
   loading: true,
 };
@@ -43,7 +44,7 @@ const userSlice = createSlice({
       state.user = action.payload;
     },
     setName(state, action) {
-      state.user.name = action.payload;
+      state.user.nickName = action.payload;
     },
     setGender(state, action) {
       state.user.gender = action.payload;
@@ -55,30 +56,21 @@ const userSlice = createSlice({
       state.user.email = action.payload;
     },
     setPhone(state, action) {
-      state.user.phone = action.payload;
+      state.user.phoneNumber = action.payload;
     },
     setImage(state, action) {
       state.user.imageUrl = action.payload;
     },
     resetUser(state, action) {
       state.user = initialState;
-
+      localStorage.removeItem('accessToken');
       httpInstance.defaults.headers.common['Authorization'] = '';
     },
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, { payload }) => {
-      console.log(payload);
-      const user = state.user;
-      user.id = payload.id;
-      user.name = payload.name;
-      user.email = payload.email;
-      user.imageUrl = payload.imageUrl;
-      user.profileSaveUser = payload.profileSaveUser;
-      user.gender = payload.gender;
-      user.address = payload.address;
-      user.phone = payload.phone;
-
+      localStorage.setItem('accessToken', payload.accessToken);
+      state.user = payload;
       state.loading = false;
     },
     [fetchUser.rejected]: state => {

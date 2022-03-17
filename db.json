@@ -1,12 +1,11 @@
 {
-  "data": {
+  "login": {
     "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4IiwiaWF0IjoxNjQ2Mjk1MjUzLCJleHAiOjE2NDYyOTcwNTN9.kysqBhyEpEwRdCD8A1wT19S0Ljr03vzmgLEzzj36pjU",
     "email": "cndusqls98@naver.com",
-    "id": 8,
+    "id": 123,
     "imageUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
-    "name": "추연빈",
-    "gender": "male",
-    "profileSaveUser": false,
+    "nickName": "추연빈",
+    "profileSaveUser": true,
     "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLvv71cIlxy77-977-9ae-_vSIsImlhdCI6MTY0NjI5NTI1MywiZXhwIjoxNjQ3NTA0ODUzfQ.sJ66mRTxKjB1UKkWgz7-qzQ9Lp1EbRSQWi_z3I9E3fg",
     "role": "USER",
     "tokenType": "Bearer"
@@ -15,11 +14,22 @@
     "imageUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
     "message": "ㅁㄴㅇㅁㄴㅇㅁㄴ"
   },
-  "logout": [],
+  "logout": {},
+  "auth": {
+    "email": "cndusqls98@naver.com",
+    "id": 8,
+    "imageUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
+    "nickName": "추연빈",
+    "gender": "MAN",
+    "phoneNumber": "010-4110-6541",
+    "address": "경기도 군포시 산본2동",
+    "profileSaveUser": true
+  },
   "modifyUser": {
     "imageUrl": "안녕하세요.png",
     "message": "ㅁㄴㅇㅁㄴㅇㅁㄴ"
   },
+  "delete": {},
   "posts": {
     "content": [
       {
@@ -195,11 +205,11 @@
     "totalPages": 0
   },
   "uploadComments": {
-    "content": "밥드시고 싶으면 010-4110-7541",
-    "address": "경기도 군포시 산본동",
+    "content": "kl;kl;kl;",
+    "address": "경기도 군포시 산본2동",
     "username": "추연빈",
     "profileUrl": "http://k.kakaocdn.net/dn/smrRA/btrqtT2KMaE/guC5VEmDe8HIZAwDy5IfyK/img_640x640.jpg",
-    "createdAt": "Mon Mar 14 2022 00:10:29 GMT+0900 (한국 표준시)"
+    "createdAt": "Thu Mar 17 2022 14:49:42 GMT+0900 (한국 표준시)"
   },
   "uploadPost": [
     {
@@ -216,6 +226,21 @@
       "title": "kasdas",
       "content": "kl;kl;",
       "id": 3
+    },
+    {
+      "title": "pokok",
+      "content": "okpokp",
+      "id": 4
+    },
+    {
+      "title": "[opoo",
+      "content": "oppoop[p[o",
+      "id": 5
+    },
+    {
+      "title": "",
+      "content": "",
+      "id": 6
     }
   ],
   "like": [
@@ -258,6 +283,14 @@
     {
       "liked": true,
       "id": 10
+    },
+    {
+      "liked": true,
+      "id": 11
+    },
+    {
+      "liked": true,
+      "id": 12
     }
   ],
   "users": {

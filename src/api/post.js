@@ -1,7 +1,7 @@
 import httpInstance from './index';
 
 class Post {
-  constructor(httpInstance) {
+  constructor() {
     this.request = httpInstance;
   }
 
@@ -49,6 +49,6 @@ class Post {
   }
 }
 
-const postAPI = new Post(httpInstance);
+const postAPI = new Post();
 
 export default postAPI;

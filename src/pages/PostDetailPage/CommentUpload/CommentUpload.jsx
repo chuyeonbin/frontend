@@ -27,7 +27,7 @@ const CommentUpload = ({ addComment }) => {
     const comment = {
       content: textRef.current.value,
       address: user.address,
-      username: user.name,
+      username: user.nickName,
       profileUrl: user.imageUrl,
       createdAt: Date(),
     };
