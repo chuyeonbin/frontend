@@ -22,12 +22,12 @@ class Post {
   }
 
   async editPost(postData, postId) {
-    return await this.request.patch('posts/{postId}', postData);
+    return await this.request.patch(`posts/${postId}`, postData);
     // return await this.request.post('edit', postData);
   }
 
   async deletePost(postId) {
-    return await this.request.delete('posts/{postId}');
+    return await this.request.delete(`posts/${postId}`);
     // return await this.request.get('deletePost');
   }
 
