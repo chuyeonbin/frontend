@@ -18,6 +18,7 @@ const OauthCallbackPage = () => {
     dispatch(fetchUser(code)).then(res => {
       const profileSaveUser = res.payload.profileSaveUser;
 
+      console.log(res.payload);
       if (!profileSaveUser) {
         //회원가입이 안되있으면
         dispatch(setShowModal(true));

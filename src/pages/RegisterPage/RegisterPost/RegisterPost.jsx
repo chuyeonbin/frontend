@@ -12,12 +12,11 @@ import postAPI from '../../../api/post';
 const RegisterPost = ({ registerPost }) => {
   const navigate = useNavigate();
   const user = useSelector(state => state.user.user);
-  
+
   const {
     createdAt,
     title,
     // address,
-    username,
     likeCount,
     commentCount,
     viewCount,
@@ -66,7 +65,7 @@ const RegisterPost = ({ registerPost }) => {
       <S.Footer>
         <S.UserImg img={user.imageUrl} />
         <S.UserInFo>
-          <S.NickName>{username}</S.NickName>
+          <S.NickName>{user.nickName}</S.NickName>
           {/* <S.Address>{address}</S.Address> */}
         </S.UserInFo>
         <S.EditButton

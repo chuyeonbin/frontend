@@ -13,14 +13,17 @@ const fetchUser = createAsyncThunk('user/login', async (code, thunkAPI) => {
   return response.data;
 });
 
-const insertUser = createAsyncThunk(
-  'user/signUp',
-  async (userData, thunkAPI) => {
-    console.log(userData);
-    const response = await auth.insertUser(userData);
-    return response.data;
-  }
-);
+const insertUser = createAsyncThunk('user/signUp', async (user, thunkAPI) => {
+  const userData = {
+    id: user.id,
+    nickName: user.nickName,
+    address: user.address,
+    gender: user.gender,
+    phoneNumber: user.phoneNumber,
+  };
+  const response = await auth.insertUser(user.imageUrl, userData);
+  return response.data;
+});
 
 const initialState = {
   user: {
@@ -30,7 +33,11 @@ const initialState = {
     imageUrl: null,
     profileSaveUser: false,
     gender: null,
-    address: null,
+    address: {
+      city: '',
+      street: '',
+      zipcode: '',
+    },
     phoneNumber: null,
   },
   loading: true,
@@ -40,33 +47,30 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, { payload: { key, value } }) => {
-      console.log(key, value);
-      return {
-        ...state,
-        [key]: value,
-      };
+    setUser(state, { payload }) {
+      state.user = payload;
     },
-    setName(state, action) {
-      state.user.nickName = action.payload;
+    setName(state, { payload }) {
+      state.user.nickName = payload;
     },
-    setGender(state, action) {
-      state.user.gender = action.payload;
+    setGender(state, { payload }) {
+      state.user.gender = payload;
     },
-    setAddress(state, action) {
-      state.user.address = action.payload;
+    setAddress(state, { payload }) {
+      state.user.address[payload.id] = payload.value;
     },
-    setEmail(state, action) {
-      state.user.email = action.payload;
+    setEmail(state, { payload }) {
+      state.user.email = payload;
     },
-    setPhone(state, action) {
-      state.user.phoneNumber = action.payload;
+    setPhone(state, { payload }) {
+      state.user.phoneNumber = payload;
     },
-    setImage(state, action) {
-      state.user.imageUrl = action.payload;
+    setImage(state, { payload }) {
+      console.log('image', payload);
+      state.user.imageUrl = payload;
     },
-    resetUser(state, action) {
-      state.user = initialState;
+    resetUser(state) {
+      state.user = initialState.user;
       localStorage.removeItem('accessToken');
       httpInstance.defaults.headers.common['Authorization'] = '';
     },
@@ -74,16 +78,15 @@ const userSlice = createSlice({
   extraReducers: {
     [fetchUser.fulfilled]: (state, { payload }) => {
       localStorage.setItem('accessToken', payload.accessToken);
-      state.user = payload;
-      state.loading = false;
-    },
-    [fetchUser.rejected]: state => {
-      state.loading = false;
+      state.user.email = payload.email;
+      state.user.id = payload.id;
+      state.user.imageUrl = payload.imageUrl;
+      state.user.nickName = payload.nickName;
+      state.user.profileSaveUser = payload.profileSaveUser;
     },
     [insertUser.fulfilled]: (state, { payload }) => {
-      const user = state.user;
-      user.imageUrl = payload.imageUrl;
-      user.profileSaveUser = true;
+      state.user.imageUrl = payload.imageUrl;
+      state.user.profileSaveUser = true;
     },
   },
 });

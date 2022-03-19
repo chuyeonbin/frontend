@@ -22,17 +22,13 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("useEffect user : ", user);
     if (!user.profileSaveUser) {
       return;
     }
 
     auth
       .getUser() //
-      .then(res => {
-        console.log(res.data);
-        dispatch(setUser(res.data));
-      })
+      .then(res => dispatch(setUser(res.data)))
       .catch(() => {
         alert('세션이 만료 되었습니다.');
         dispatch(resetUser());

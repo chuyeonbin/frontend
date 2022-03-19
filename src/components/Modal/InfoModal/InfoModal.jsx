@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setGender,
   setAddress,
   setEmail,
   setPhone,
+  setImage,
   insertUser,
 } from '../../../store/user';
 import * as S from './style';
@@ -17,8 +18,16 @@ function InfoModal({ closeModal }) {
     dispatch(setGender(e.target.id));
   };
 
-  const handleAddressChange = e => {
-    dispatch(setAddress(e.target.value));
+  const handleCityChange = e => {
+    dispatch(setAddress({ id: e.target.id, value: e.target.value }));
+  };
+
+  const handleStreetChange = e => {
+    dispatch(setAddress({ id: e.target.id, value: e.target.value }));
+  };
+
+  const handleZipCodeChange = e => {
+    dispatch(setAddress({ id: e.target.id, value: e.target.value }));
   };
 
   const handleEmailChange = e => {
@@ -30,9 +39,16 @@ function InfoModal({ closeModal }) {
   };
 
   const signUp = () => {
-    dispatch(insertUser(user));
+    console.log(user);
+    dispatch(insertUser(user)).then(res => {
+      dispatch(setImage(res.payload.imageUrl));
+    });
     closeModal();
   };
+
+  useEffect(() => {
+    dispatch(setGender('MAN'));
+  }, []);
 
   return (
     <S.InfoWrap>
@@ -59,7 +75,9 @@ function InfoModal({ closeModal }) {
       </S.InputWrap>
       <S.InputWrap>
         <S.InputName>사는지역</S.InputName>
-        <S.Address onChange={handleAddressChange} />
+        <S.Address id="city" onChange={handleCityChange} />
+        <S.Address id="street" onChange={handleStreetChange} />
+        <S.Address id="zipcode" onChange={handleZipCodeChange} />
       </S.InputWrap>
       <S.InputWrap>
         <S.InputName>이메일</S.InputName>

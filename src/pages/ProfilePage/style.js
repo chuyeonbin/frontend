@@ -103,7 +103,10 @@ export const Label = styled.label`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
-export const Address = styled(Input).attrs({ type: 'text' })``;
+export const Address = styled(Input).attrs({ type: 'text' })`
+  margin-right: 0.3rem;
+  width: 40px;
+`;
 
 export const Email = styled(Input).attrs({ type: 'email' })``;
 

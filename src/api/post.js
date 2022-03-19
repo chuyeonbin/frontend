@@ -11,6 +11,10 @@ class Post {
   }
 
   async getPost(postId) {
+    this.request.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${localStorage.getItem('accessToken')}`;
+
     const post = await this.request.get(`posts/${postId}`);
     // const post = await this.request.get('post');
     return post;
@@ -18,7 +22,7 @@ class Post {
 
   async uploadPost(postData) {
     return await this.request.get('users/me/posts', postData);
-    // return await this.request.post('uploadPost', postData);
+    // return await this.request.get('uploadPost', postData);
   }
 
   async editPost(postData, postId) {
@@ -44,9 +48,9 @@ class Post {
   }
 
   async getLike(postId, liked) {
-    console.log("postId : ", postId, " liked : ", liked);
+    // console.log("postId : ", postId, " liked : ", liked);
     return await this.request.patch(`posts/${postId}/likes`, liked);
-    // return await this.request.post('like', { liked });
+    // return await this.request.post('like', liked);
   }
 }
 

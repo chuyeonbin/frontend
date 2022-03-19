@@ -8,27 +8,34 @@ class Auth {
   async login(code) {
     const userData = await this.request.get(`login/oauth/kakao?code=${code}`);
     // const userData = await this.request.get('login');
-    console.log(userData);
     return userData;
   }
 
-  async insertUser(userData) {
-    const res = await this.request.post(`users/profile/me`, userData, {
-      headers: {
-          'Content-Type': `multipart/form-data; `,
-        },
-    });
-    console.log(userData);
-    // const res = await this.request.get('inserUser', userData, {
+  async insertUser(file, userData) {
+    const formData = new FormData();
+    if (typeof a == 'undefined') {
+      formData.append('file', file);
+    }
+    formData.append(
+      'json',
+      new Blob([JSON.stringify(userData)], { type: 'application/json' })
+    );
+    console.log(userData, file);
+    // const res = await this.request.post('inserUser', formData, {
     //   headers: {
     //     'Content-Type': `multipart/form-data; `,
     //   },
     // });
+    const res = await this.request.post('users/profile/me', formData, {
+      headers: {
+        'Content-Type': `multipart/form-data; `,
+      },
+    });
     return res;
   }
 
   async logout() {
-    const res = await this.request.post('logout');
+    const res = await this.request.post('logout/me');
     // const res = await this.request.get('logout');
     return res;
   }
@@ -52,6 +59,7 @@ class Auth {
     ] = `Bearer ${localStorage.getItem('accessToken')}`;
 
     const userData = await this.request.get('users/me');
+    // const userData = await this.request.get('auth');
     return userData;
   }
 }
