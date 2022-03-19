@@ -12,7 +12,9 @@ const ProfilePage = () => {
 
   const nameRef = useRef('');
   const [gender, setGender] = useState(user.gender);
-  const addressRef = useRef('');
+  const cityRef = useRef('');
+  const streetRef = useRef('');
+  const zipcodeRef = useRef('');
   const emailRef = useRef('');
   const phoneRef = useRef('');
 
@@ -21,7 +23,11 @@ const ProfilePage = () => {
   const onProfileModify = () => {
     const userData = {
       id: user.id,
-      address: addressRef.current.value,
+      address: {
+        city: cityRef.current.value,
+        street: streetRef.current.value,
+        zipcode: zipcodeRef.current.value,
+      },
       email: emailRef.current.value,
       gender: gender,
       imageUrl: '',
@@ -92,7 +98,18 @@ const ProfilePage = () => {
           </S.Div>
           <S.Div>
             <S.H3>사는지역</S.H3>
-            <S.Address defaultValue={user.address || ''} ref={addressRef} />
+            <S.Address
+              defaultValue={`${user.address.city}` || ''}
+              ref={cityRef}
+            />
+            <S.Address
+              defaultValue={`${user.address.street}` || ''}
+              ref={streetRef}
+            />
+            <S.Address
+              defaultValue={`${user.address.zipcode}` || ''}
+              ref={zipcodeRef}
+            />
           </S.Div>
           <S.Div>
             <S.H3>이메일</S.H3>

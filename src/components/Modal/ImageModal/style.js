@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Button from '../../Button/Button';
-import testImg from '../../../images/doji.png';
 
 export const ImageWrap = styled.div`
   margin-top: 2rem;

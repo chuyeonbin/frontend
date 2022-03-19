@@ -27,7 +27,7 @@ function EditPage() {
       .editPost({
         title: titleRef.current.value,
         content: contentRef.current.value,
-      })
+      }, location.state.postId)
       .then(res => {
         alert('글 수정이 완료 됐습니다.');
         navigate('/');

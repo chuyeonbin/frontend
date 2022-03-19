@@ -6,16 +6,27 @@ class Auth {
   }
 
   async login(code) {
-    // const userData = await this.request.get(`login/oauth/kakao?code=${code}`);
-    const userData = await this.request.get('login');
-    console.log(userData);
+    const userData = await this.request.get(`login/oauth/kakao?code=${code}`);
+    // const userData = await this.request.get('login');
     return userData;
   }
 
-  async insertUser(userData) {
-    // const res = await this.request.post(`users/profile/me`, userData);
-    console.log(userData);
-    const res = await this.request.get('inserUser', userData, {
+  async insertUser(file, userData) {
+    const formData = new FormData();
+    if (typeof a == 'undefined') {
+      formData.append('file', file);
+    }
+    formData.append(
+      'json',
+      new Blob([JSON.stringify(userData)], { type: 'application/json' })
+    );
+    console.log(userData, file);
+    // const res = await this.request.post('inserUser', formData, {
+    //   headers: {
+    //     'Content-Type': `multipart/form-data; `,
+    //   },
+    // });
+    const res = await this.request.post('users/profile/me', formData, {
       headers: {
         'Content-Type': `multipart/form-data; `,
       },
@@ -24,14 +35,14 @@ class Auth {
   }
 
   async logout() {
-    // const res = await this.request.post('logout');
-    const res = await this.request.get('logout');
+    const res = await this.request.post('logout/me');
+    // const res = await this.request.get('logout');
     return res;
   }
 
   async modifyUser(userData) {
-    // const res = await this.request.post(`users/profile/me`, userData);
-    const res = await this.request.get('modifyUser', userData);
+    const res = await this.request.post(`users/profile/me`, userData);
+    // const res = await this.request.get('modifyUser', userData);
     return res;
   }
 
@@ -47,7 +58,8 @@ class Auth {
       'Authorization'
     ] = `Bearer ${localStorage.getItem('accessToken')}`;
 
-    const userData = await this.request.get('auth');
+    const userData = await this.request.get('users/me');
+    // const userData = await this.request.get('auth');
     return userData;
   }
 }

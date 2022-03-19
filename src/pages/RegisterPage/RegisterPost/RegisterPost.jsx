@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import * as S from './style';
 import {
   faThumbsUp,
@@ -10,15 +11,16 @@ import postAPI from '../../../api/post';
 
 const RegisterPost = ({ registerPost }) => {
   const navigate = useNavigate();
+  const user = useSelector(state => state.user.user);
+
   const {
     createdAt,
     title,
-    address,
-    username,
+    // address,
     likeCount,
     commentCount,
     viewCount,
-    profileUrl,
+    // profileUrl,
     postId,
     content,
   } = registerPost;
@@ -61,10 +63,10 @@ const RegisterPost = ({ registerPost }) => {
         </S.ContentInFo>
       </S.Content>
       <S.Footer>
-        <S.UserImg img={profileUrl} />
+        <S.UserImg img={user.imageUrl} />
         <S.UserInFo>
-          <S.NickName>{username}</S.NickName>
-          <S.Address>{address}</S.Address>
+          <S.NickName>{user.nickName}</S.NickName>
+          {/* <S.Address>{address}</S.Address> */}
         </S.UserInFo>
         <S.EditButton
           name="수정"

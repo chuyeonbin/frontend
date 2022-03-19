@@ -50,7 +50,7 @@ const Post = ({ post }) => {
         <S.UserImg img={profileUrl} />
         <S.UserInFo>
           <S.NickName>{username}</S.NickName>
-          <S.Address>{address}</S.Address>
+          <S.Address>{`${address.city} ${address.street} ${address.zipcode}`}</S.Address>
         </S.UserInFo>
         <S.ChatButton name={'1:1 채팅하기'} />
       </S.Footer>

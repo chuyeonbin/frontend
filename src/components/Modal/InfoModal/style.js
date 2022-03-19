@@ -67,7 +67,25 @@ export const Label = styled.label`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 `;
 
-export const Address = styled(Input).attrs({ type: 'text' })``;
+// export const InputWrap = styled.div`
+//   margin-bottom: 1rem;
+//   display: flex;
+//   align-items: center;
+// `;
+
+export const AddressWrap = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+`;
+
+export const Address = styled.input.attrs({ type: 'text' })`
+  margin-right: 0.3rem;
+  width: 70px;
+  padding: 0.6rem;
+  border-radius: 8px;
+  font-size: ${({ theme }) => theme.fontSize.small};
+  border: 1px solid grey;
+`;
 
 export const Email = styled(Input).attrs({ type: 'email' })``;
 
