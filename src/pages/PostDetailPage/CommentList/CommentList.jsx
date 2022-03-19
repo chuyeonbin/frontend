@@ -3,17 +3,15 @@ import * as S from './style';
 import CommentItem from '../CommentItem/CommentItem';
 import CommentUpload from '../CommentUpload/CommentUpload';
 
-const CommentList = ({ commentList }) => {
+const CommentList = ({ addComment, comments }) => {
   return (
     <>
-      <CommentUpload />
+      <S.CommentCount>댓글: {comments.length}</S.CommentCount>
+      <CommentUpload addComment={addComment} />
       <S.CommentList>
-        <CommentItem />
-        <CommentItem />
-        <CommentItem />
-        <CommentItem />
-        <CommentItem />
-        <CommentItem />
+        {comments.map((comment, index) => (
+          <CommentItem key={index} comment={comment} />
+        ))}
       </S.CommentList>
     </>
   );

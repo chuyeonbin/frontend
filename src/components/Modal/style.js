@@ -3,7 +3,7 @@ import { CloseOutline } from '@styled-icons/evaicons-outline';
 import favicon from '../../images/favicon.png';
 
 export const Wrap = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -51,5 +51,5 @@ export const Logo = styled.img.attrs({
   src: `${favicon}`,
   alt: '로고',
 })`
-  width: 120px;
+  width: 90px;
 `;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardList = styled.ul`
+export const RegisterPosts = styled.ul`
   display: flex;
   flex-wrap: wrap;
 `;

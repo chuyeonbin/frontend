@@ -6,7 +6,6 @@ export const Button = styled.button`
   //props.color가 들어오면 red
   background-color: ${({ theme }) =>
     props => {
-      console.log(props.color);
       return props.color === 'red' ? theme.color.red : theme.color.purple;
     }};
   color: ${({ theme }) => theme.color.white};

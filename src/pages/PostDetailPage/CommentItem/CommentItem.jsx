@@ -1,26 +1,20 @@
 import React from 'react';
 import * as S from './style';
 
-const CommentItem = () => {
+const CommentItem = ({ comment }) => {
+  console.log(comment);
   return (
     <S.CommentItem>
       <S.UserWrap>
-        <S.UserImg />
+        <S.UserImg url={comment.profileUrl} />
         <S.UserInfo>
-          <S.NickName>끼야아아알</S.NickName>
-          <S.Address>경기도 군포시 산본동</S.Address>
+          <S.NickName>{comment.username}</S.NickName>
+          <S.Address>{`${comment.address.city} ${comment.address.street} ${comment.address.zipcode}`}</S.Address>
         </S.UserInfo>
-        <S.Date>2022-02-13 17시 15분</S.Date>
+        <S.Date>{comment.createdAt}</S.Date>
       </S.UserWrap>
       <S.CommentWrap>
-        <S.Commnent>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-          aLorem
-        </S.Commnent>
-        <S.Commnent>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-          aLorem
-        </S.Commnent>
+        <S.Commnent>{comment.content}</S.Commnent>
       </S.CommentWrap>
     </S.CommentItem>
   );

@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setShowModal } from '../store/modal';
 
 const useModal = () => {
-  const [showModal, setShowModal] = useState(false);
-  const toggleModal = () => setShowModal(!showModal);
+  const showModal = useSelector(state => state.modal.visible);
+  const dispatch = useDispatch();
+
+  const toggleModal = () => {
+    dispatch(setShowModal(!showModal));
+  };
+
   return [showModal, toggleModal];
 };
 
