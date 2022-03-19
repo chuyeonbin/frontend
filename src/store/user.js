@@ -47,20 +47,11 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-<<<<<<< HEAD
-    setUser: (state, { payload: { key, value } }) => ({
-      ...state,
-      [key]: value,
-    }),
-    setName(state, action) {
-      state.user.nickName = action.payload;
-=======
     setUser(state, { payload }) {
       state.user = payload;
     },
     setName(state, { payload }) {
       state.user.nickName = payload;
->>>>>>> feature/test
     },
     setGender(state, { payload }) {
       state.user.gender = payload;
