@@ -21,7 +21,7 @@ class Post {
   }
 
   async uploadPost(postData) {
-    return await this.request.get('users/me/posts', postData);
+    return await this.request.post('users/me/posts', postData);
     // return await this.request.get('uploadPost', postData);
   }
 

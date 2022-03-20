@@ -4,7 +4,7 @@
     "email": "cndusqls98@naver.com",
     "id": 123,
     "nickName": "추연빈",
-    "profileSaveUser": true,
+    "profileSaveUser": false,
     "refreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLvv71cIlxy77-977-9ae-_vSIsImlhdCI6MTY0NjI5NTI1MywiZXhwIjoxNjQ3NTA0ODUzfQ.sJ66mRTxKjB1UKkWgz7-qzQ9Lp1EbRSQWi_z3I9E3fg",
     "role": "USER",
     "tokenType": "Bearer"
