@@ -20,7 +20,7 @@ const RegisterPage = () => {
     postAPI
       .registerPost() //
       .then(res => {
-        setRegisterPosts(res.data);
+        setRegisterPosts(res.data.content);
       });
   }, []);
 
