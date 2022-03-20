@@ -20,8 +20,12 @@ class Post {
     return post;
   }
 
+  async registerPost() {
+    return await this.request.get('users/me/posts');
+  }
+
   async uploadPost(postData) {
-    return await this.request.post('users/me/posts', postData);
+    return await this.request.post('posts', postData);
     // return await this.request.get('uploadPost', postData);
   }
 
