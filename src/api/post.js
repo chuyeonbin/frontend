@@ -21,6 +21,10 @@ class Post {
   }
 
   async registerPost() {
+    this.request.defaults.headers.common[
+      'Authorization'
+    ] = `Bearer ${localStorage.getItem('accessToken')}`;
+
     return await this.request.get('users/me/posts');
   }
 

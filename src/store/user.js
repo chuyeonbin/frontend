@@ -22,6 +22,7 @@ const insertUser = createAsyncThunk('user/signUp', async (user, thunkAPI) => {
     email: user.email,
     phoneNumber: user.phoneNumber,
   };
+
   const response = await auth.insertUser(user.imageUrl, userData);
   return response.data;
 });

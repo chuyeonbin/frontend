@@ -12,7 +12,7 @@ export const ProfileWrap = styled.div`
   align-items: center;
 `;
 
-export const UserForm = styled.form`
+export const UserDiv = styled.div`
   margin-bottom: 3rem;
   padding: 0 1rem;
   width: 100%;

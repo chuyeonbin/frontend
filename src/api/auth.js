@@ -13,9 +13,13 @@ class Auth {
 
   async insertUser(file, userData) {
     const formData = new FormData();
-    if (typeof a == 'undefined') {
+
+    if (typeof file === 'object') {
       formData.append('file', file);
+    } else if (typeof file === 'string') {
+      userData.imageUrl = file;
     }
+
     formData.append(
       'json',
       new Blob([JSON.stringify(userData)], { type: 'application/json' })

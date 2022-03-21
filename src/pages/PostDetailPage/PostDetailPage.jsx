@@ -96,7 +96,7 @@ const PostDetailPage = () => {
               </S.IconList>
               <S.IconList>
                 <S.Comment icon={faCommentDots} />
-                <S.Count>{content.commentCount}</S.Count>
+                <S.Count>{comments.length}</S.Count>
               </S.IconList>
               <S.IconList>
                 <S.View icon={faEye} />

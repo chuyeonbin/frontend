@@ -3,14 +3,18 @@ import * as S from './style';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../api/auth';
-import { resetUser, setImage } from '../../store/user';
+import { insertUser, resetUser, setImage } from '../../store/user';
+import ImageUpload from '../../components/ImageUpload/ImageUpload';
 
 const ProfilePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector(state => state.user.user);
 
-  const nameRef = useRef('');
+  const [imageUrl, setImageUrl] = useState(user.imageUrl);
+  const [file, setFile] = useState(user.imageUrl);
+
+  const nickNameRef = useRef('');
   const [gender, setGender] = useState(user.gender);
   const cityRef = useRef('');
   const streetRef = useRef('');
@@ -21,7 +25,7 @@ const ProfilePage = () => {
   const handleGenderChange = e => setGender(e.target.id);
 
   const onProfileModify = () => {
-    const userData = {
+    const modifyUser = {
       id: user.id,
       address: {
         city: cityRef.current.value,
@@ -30,16 +34,22 @@ const ProfilePage = () => {
       },
       email: emailRef.current.value,
       gender: gender,
-      imageUrl: '',
-      name: nameRef.current.value,
-      phone: phoneRef.current.value,
+      imageUrl: file,
+      nickName: nickNameRef.current.value,
+      phoneNumber: phoneRef.current.value,
     };
 
-    auth.modifyUser(userData).then(res => {
+    dispatch(insertUser(modifyUser)).then(res => {
       alert('수정이 완료 되었습니다.');
       dispatch(setImage(res.data.imageUrl));
       navigate('/');
     });
+
+    // auth.insertUser(userData).then(res => {
+    //   alert('수정이 완료 되었습니다.');
+    //   dispatch(setImage(res.data.imageUrl));
+    //   navigate('/');
+    // });
   };
 
   const onDeleteUser = e => {
@@ -53,27 +63,42 @@ const ProfilePage = () => {
       });
   };
 
+  const handleFileChange = e => {
+    const reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+    setFile(e.target.files[0]);
+
+    reader.onloadend = () => {
+      const base64 = reader.result;
+      setImageUrl(base64);
+    };
+  };
+
+  const handleDefaultImage = () => {
+    setImageUrl('https://d3afymv2nzz1pw.cloudfront.net/doji.png');
+    setFile('https://d3afymv2nzz1pw.cloudfront.net/doji.png');
+  };
+
   useEffect(() => {
     if (!user.profileSaveUser) {
+      alert('로그인이 필요한 페이지 입니다.');
       navigate('/');
       return;
     }
-  }, []);
+  }, [navigate, user.profileSaveUser]);
 
   return (
     <S.ProfilePage title="프로필 수정">
       <S.ProfileWrap>
-        <S.UserForm>
-          <S.ImageUpload>
-            <S.UserImg />
-            <S.ButtonWrap>
-              <S.ImgButton name="기본이미지" />
-              <S.ImgButton name="이미지 선택" />
-            </S.ButtonWrap>
-          </S.ImageUpload>
+        <S.UserDiv>
+          <ImageUpload
+            imageUrl={imageUrl}
+            onFileChange={handleFileChange}
+            onDefaultImage={handleDefaultImage}
+          />
           <S.Div>
             <S.H3>닉네임</S.H3>
-            <S.Name defaultValue={user.nickName || ''} ref={nameRef} />
+            <S.Name defaultValue={user.nickName || ''} ref={nickNameRef} />
           </S.Div>
           <S.Div>
             <S.H3>성별</S.H3>
@@ -120,7 +145,7 @@ const ProfilePage = () => {
             <S.Phone defaultValue={user.phoneNumber || ''} ref={phoneRef} />
           </S.Div>
           <S.DeleteButton name="회원탈퇴" color="red" onClick={onDeleteUser} />
-        </S.UserForm>
+        </S.UserDiv>
         <S.ComplateButton name="프로필 수정" onClick={onProfileModify} />
       </S.ProfileWrap>
     </S.ProfilePage>

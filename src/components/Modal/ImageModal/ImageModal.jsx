@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCount } from '../../../store/modal';
 import { setImage } from '../../../store/user';
@@ -6,7 +6,7 @@ import ImageUpload from '../../ImageUpload/ImageUpload';
 import * as S from './style';
 
 const ImageModal = () => {
-  const defaultImageUrl = '';
+  const defaultImageUrl = 'https://d3afymv2nzz1pw.cloudfront.net/doji.png';
   const [imageUrl, setImageUrl] = useState(defaultImageUrl);
   const dispatch = useDispatch();
 

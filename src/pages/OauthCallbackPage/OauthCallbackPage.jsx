@@ -26,7 +26,7 @@ const OauthCallbackPage = () => {
       }
       navigate('/');
     });
-  }, [navigate]);
+  }, [navigate, dispatch]);
 
   return (
     <div>
