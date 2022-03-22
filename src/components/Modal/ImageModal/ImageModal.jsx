@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCount } from '../../../store/modal';
 import { setImage } from '../../../store/user';
 import ImageUpload from '../../ImageUpload/ImageUpload';
@@ -7,7 +7,8 @@ import * as S from './style';
 
 const ImageModal = () => {
   const defaultImageUrl = 'https://d3afymv2nzz1pw.cloudfront.net/doji.png';
-  const [imageUrl, setImageUrl] = useState(defaultImageUrl);
+  const user = useSelector(state => state.user.user);
+  const [imageUrl, setImageUrl] = useState(user.imageUrl);
   const dispatch = useDispatch();
 
   const nextClick = () => {

@@ -41,15 +41,9 @@ const ProfilePage = () => {
 
     dispatch(insertUser(modifyUser)).then(res => {
       alert('수정이 완료 되었습니다.');
-      dispatch(setImage(res.data.imageUrl));
+      dispatch(setImage(res.payload.imageUrl));
       navigate('/');
     });
-
-    // auth.insertUser(userData).then(res => {
-    //   alert('수정이 완료 되었습니다.');
-    //   dispatch(setImage(res.data.imageUrl));
-    //   navigate('/');
-    // });
   };
 
   const onDeleteUser = e => {
