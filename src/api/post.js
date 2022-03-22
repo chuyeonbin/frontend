@@ -57,7 +57,9 @@ class Post {
 
   async getLike(postId, liked) {
     // console.log("postId : ", postId, " liked : ", liked);
-    return await this.request.patch(`posts/${postId}/likes`, liked);
+    return await this.request.patch(`posts/${postId}/likes`, {
+      liked: `${liked}`,
+    });
     // return await this.request.post('like', liked);
   }
 }
